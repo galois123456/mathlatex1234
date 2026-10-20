@@ -1,20 +1,319 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>수식 공방 · LaTeX & 한글</title><style>
-:root{--ink:#272338;--muted:#716b81;--purple:#7453d6;--pale:#f0ebff;--line:#e5e0ed}*{box-sizing:border-box}body{margin:0;background:#f5f3f9;color:var(--ink);font-family:system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif}main{max-width:1120px;margin:32px auto;padding:0 20px}header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:24px}h1{font-size:29px;letter-spacing:-1.3px;margin:6px 0}p{line-height:1.65;margin:6px 0}.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--purple)}.sub{font-size:14px;color:var(--muted)}.badge{padding:9px 13px;border:1px solid var(--line);border-radius:24px;background:white;white-space:nowrap;font-size:12px;color:var(--muted)}.card{background:white;border:1px solid var(--line);border-radius:20px;margin-bottom:16px;overflow:hidden;box-shadow:0 4px 24px #3b1e6410}.sectionbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--line)}.sectionbar strong{font-size:14px}.actions{display:flex;gap:6px;align-items:center;flex-wrap:wrap}button,select,input{font:inherit}button,select{min-height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);padding:8px 13px;cursor:pointer}button:hover{background:var(--pale);border-color:#b8a6ea}button:active{transform:translateY(1px)}button:focus-visible,select:focus-visible{outline:3px solid #bda8f0;outline-offset:2px}button:disabled{opacity:.4;cursor:default}select{max-width:100%;font-size:13px}.primary{background:var(--purple);color:white;border-color:var(--purple);font-weight:700}.primary:hover{background:#6240c3;color:white}.quiet{border-color:transparent;background:#f7f5fa;font-size:13px}.editor-scroll{overflow-x:auto;padding:20px 24px 24px;min-height:210px;background:#faf8fd;overscroll-behavior-x:contain}.slot{display:inline-block;min-width:.8em;min-height:1.2em;vertical-align:middle;border-radius:4px;outline:none;white-space:pre;line-height:1.35;padding:1px 3px;border:1px solid transparent;caret-color:#6735d2}.slot:empty{min-width:1em;min-height:1.1em;border:1px dashed #a99ac9;background:#f6f2ff}.slot:focus{background:#f3edff80;border-color:#c7b5ef}.slot.active-slot{box-shadow:0 2px 0 #a88cde}.slot.invalid{border-color:#cb6c72;background:#fff5f5}.root{display:block;font-family:'Cambria Math','STIX Two Math','Times New Roman',serif;font-size:30px;width:100%;min-width:100%;min-height:150px;padding:26px 22px;white-space:pre;line-height:1.65;background:#fff;border:2px solid #c9b8ef;border-radius:14px;box-shadow:inset 0 1px 3px #3b1e6410;cursor:text}.root:empty{border:2px solid #c9b8ef;background:#fff}.root:empty:before{content:'여기를 눌러 수식을 입력하세요';font-family:system-ui,sans-serif;font-size:20px;color:#8c7aa9;pointer-events:none}.widget{display:inline-flex;align-items:center;vertical-align:middle;position:relative;margin:0 .08em;white-space:nowrap;line-height:1.2;border-radius:4px}.frac{flex-direction:column;text-align:center;padding:0 .09em}.frac>.slot{display:block}.frac>.slot:first-child{border-bottom:1.5px solid currentColor;border-radius:0;padding-bottom:3px}.frac>.slot:last-child{padding-top:3px}.script{align-items:center}.script>.small{font-size:.68em;align-self:flex-start;transform:translateY(-.38em);margin-left:-2px}.script.subscript>.small{align-self:flex-end;transform:translateY(.38em)}.rootrad>.radicand{border-top:1.5px solid currentColor;border-radius:0;min-height:1.2em}.radical{font-size:1.45em;line-height:1}.rootrad>.index{font-size:.55em;align-self:flex-start;margin-right:-.2em;z-index:1}.fence{font-size:1.4em;line-height:1;font-weight:300;transform:scaleY(1.15)}.fn{font-style:normal}.bigop{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .1em}.bigop>.slot{font-size:.57em}.bigop>.op{font-size:1.65em;line-height:1.1}.bigop.lim>.op{font-size:1em}.binomstack{display:inline-flex;flex-direction:column;gap:5px;align-items:center}.prescript{font-size:.65em;align-self:flex-end;transform:translateY(.25em)}.acc{flex-direction:column;gap:0}.accentmark{font-size:.65em;height:.6em;line-height:.65em;align-self:stretch;text-align:center}.matrixgrid{display:grid;gap:7px 15px;padding:8px;align-items:center;text-align:center}.matrixwrap{padding:0 4px}.matrixwrap .fence{align-self:stretch;display:flex;align-items:center;font-size:1.8em;transform:none}.matrixwrap[data-style=bmatrix]{border-left:2px solid;border-right:2px solid;border-radius:3px}.matrixwrap[data-style=vmatrix]{border-left:1.5px solid;border-right:1.5px solid}.matrixwrap[data-style=aligned] .matrixgrid{column-gap:4px}.matrixwrap[data-style=aligned] .matrixgrid>.slot:nth-child(odd){text-align:right}.matrixwrap[data-style=aligned] .matrixgrid>.slot:nth-child(even),.matrixwrap[data-style=cases] .slot{text-align:left}.matrixwrap[data-style=pmatrix]{border-left:2px solid;border-right:2px solid;border-radius:22%}.textwidget .slot{font-family:system-ui,sans-serif;font-size:.8em}.editorfoot{padding:10px 20px;background:#fcfbfe;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.hint{font-size:12px;color:var(--muted)}.tabs{display:flex;overflow-x:auto;gap:6px;padding:14px 16px;border-bottom:1px solid var(--line);background:#faf8fd}.tab{white-space:nowrap;border-color:transparent;background:transparent;font-size:14px;min-width:70px}.tab.selected{background:var(--purple);color:white}.keys{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px;padding:16px;background:#f5f3f9;min-height:200px}.key{min-height:63px;padding:5px 3px;border:0;box-shadow:0 1px 2px #30104a08;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}.key .symbol{font-family:'Cambria Math','Times New Roman',serif;font-size:25px;line-height:1.15}.key .keyname{max-width:100%;overflow:hidden;text-overflow:ellipsis;font-size:10px;color:#8a8098;line-height:1.2;white-space:nowrap}.output{padding:20px}.formatrow{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.radios{display:flex;gap:6px}.choice{display:flex;align-items:center;gap:7px;padding:10px 15px;border:1px solid var(--line);border-radius:12px;min-height:46px;cursor:pointer;font-size:14px}.choice:has(input:checked){border-color:var(--purple);background:var(--pale);color:#603caf;font-weight:700}input[type=radio]{accent-color:var(--purple);width:16px;height:16px}.code{display:block;width:100%;resize:vertical;min-height:112px;padding:16px;background:#282335;color:#efe8ff;border:0;border-radius:12px;font:15px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:2;overflow-wrap:anywhere}.outbottom{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:14px}.notice{font-size:13px;line-height:1.5;color:#8c5844;min-height:20px;margin-top:10px}.notice.good{color:#57806a}.status{font-size:13px;color:var(--purple)}details{font-size:13px;line-height:1.8;color:var(--muted);margin:16px 4px 30px}summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center}details ul{padding-left:20px}a{color:var(--purple)}dialog{border:1px solid var(--line);border-radius:20px;padding:26px;max-width:420px;width:calc(100% - 32px);box-shadow:0 20px 90px #271c4540}dialog::backdrop{background:#21173055}dialog h2{margin-top:0;font-size:20px}dialog label{display:flex;justify-content:space-between;align-items:center;margin:15px 0}dialog input{width:86px;min-height:44px;padding:8px;border:1px solid var(--line);border-radius:8px}dialog .actions{justify-content:flex-end;margin-top:20px}#matrixTools{display:none;padding:12px 18px;background:#faf8ff;border-top:1px solid var(--line)}#matrixTools.visible{display:flex}footer{font-size:11px;color:#a09aa9;text-align:center;margin:20px}.symbol sub,.symbol sup{font-size:.55em} .symbol .tinyfrac{display:inline-flex;flex-direction:column;font-size:.65em;vertical-align:middle}.tinyfrac span:first-child{border-bottom:1px solid} @media(max-width:700px){.root{min-height:135px;padding:20px 16px}.root:empty:before{font-size:17px}main{margin:18px auto;padding:0 10px}header{padding:0 6px}h1{font-size:25px}.badge{display:none}.keys{grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding:10px}.key{min-height:60px}.sectionbar{padding:12px}.editor-scroll{padding:20px 12px}.root{font-size:26px}.output{padding:14px}.outbottom{align-items:flex-start}.choice{padding:9px}.editorfoot{padding:10px}.tabs{padding:10px}.key .keyname{font-size:9px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
-</style></head><body><main>
-<header><div><div class="eyebrow">MATH FORMULA STUDIO</div><h1>수식 공방</h1><p class="sub">눈으로 만들고, 원하는 문법으로 복사하세요.</p></div><span class="badge">단일 파일 · 오프라인 사용</span></header>
-<section class="card" aria-label="수식 편집"><div class="sectionbar"><strong>01 &nbsp; 수식 작성</strong><div class="actions"><select id="examples" aria-label="예제 불러오기"><option value="">예제 불러오기</option></select><button class="quiet" id="undo" title="실행 취소 Ctrl+Z">↶ 실행 취소</button><button class="quiet" id="redo" title="다시 실행 Ctrl+Shift+Z">↷</button><button class="quiet" id="clear">전체 지우기</button></div></div>
-<div class="editor-scroll"><div class="hint" style="margin:0 0 8px 4px;color:#695384;font-weight:700">수식 입력창</div><div id="editor" class="slot root" data-label="전체 수식" contenteditable="true" spellcheck="false" role="textbox" aria-label="시각적 수식 편집 영역" aria-multiline="false"></div></div>
-<div class="editorfoot"><span class="hint" id="location">빈칸을 눌러 입력 · Tab으로 다음 칸</span><div class="actions"><button class="quiet" id="prev">‹ 이전 입력칸</button><button class="quiet" id="next">다음 입력칸 ›</button><button class="quiet" id="exit">틀 밖으로 →</button><button class="quiet" id="erase" aria-label="앞 글자 지우기">⌫ 지우기</button></div></div>
-<div id="matrixTools" class="actions"><span class="hint">선택한 행렬</span><button class="quiet" data-resize="row+">행 +</button><button class="quiet" data-resize="row-">행 −</button><button class="quiet" data-resize="col+">열 +</button><button class="quiet" data-resize="col-">열 −</button><span class="hint">추가는 끝에, 삭제는 현재 행·열에 적용</span></div></section>
-<section class="card" aria-label="수식 키보드"><nav class="tabs" id="tabs" aria-label="기호 종류"></nav><div class="keys" id="keys"></div></section>
-<section class="card"><div class="sectionbar"><strong>02 &nbsp; 코드 출력</strong><span class="hint">같은 수식, 두 가지 문법</span></div><div class="output"><div class="formatrow"><div class="radios"><label class="choice"><input type="radio" name="format" value="latex" checked>LaTeX</label><label class="choice"><input type="radio" name="format" value="hwp">한글 수식</label></div><select id="wrapper" aria-label="LaTeX 감싸기"><option value="none">수식 본문만</option><option value="inline">$ … $ 인라인</option><option value="display">\[ … \] 독립 수식</option></select></div>
-<textarea class="code" id="code" readonly spellcheck="false" aria-label="변환된 수식 코드"></textarea><div id="issues" class="notice" aria-live="polite"></div><div class="outbottom"><div><p class="hint" id="outputHelp"></p><p class="status" id="status" aria-live="polite"></p></div><button class="primary" id="copy">코드 복사</button></div></div></section>
-<details><summary>사용 방법 · 호환성 · 검증 범위</summary><ul><li>분수·근호 등의 버튼 → 점선 입력칸 선택 → 숫자·문자 입력. 선택한 수식에 버튼을 누르면 해당 구조로 감쌉니다. 선택이 없으면 지수·근호 버튼도 새 입력 틀을 만듭니다.</li><li>Tab / Shift+Tab: 입력칸 이동. 방향키: 글자 이동, 입력칸 경계에서는 틀 밖으로 이동. ‘틀 밖으로’로 분모·지수 등의 입력을 마치고 뒤에 이어 쓸 수 있습니다.</li><li>텍스트 버튼 안에서는 일반 설명과 한글을 입력하세요. 수식 영역의 ^, _, / 키는 각각 지수·아래첨자·분수 틀을 만듭니다. LaTeX 원문을 붙여넣어 변환하는 기능은 없습니다.</li><li>여러 줄은 ‘행렬·여러 줄’ 탭의 틀을 사용하세요. 정렬 수식의 두 번째 칸은 등호를 포함하여 입력하세요. 행렬 원소 안에도 수식 틀을 넣을 수 있습니다.</li><li>한글 출력은 수식 편집기의 <b>스크립트 입력 창</b>에 붙여넣으세요. 본문에 붙여넣으면 수식 개체로 바뀌지 않습니다.</li><li>외부 라이브러리·CDN·서버·저장소를 사용하지 않습니다. 이 HTML 파일은 오프라인으로 작동하며 새로고침하면 작성 내용이 초기화됩니다.</li><li>브라우저의 시각적 수식은 자체 HTML/CSS 편집 표시입니다. LaTeX 및 한글의 최종 조판과 글꼴·간격이 다를 수 있습니다. 한글이 포함된 LaTeX는 한글을 지원하는 조판 환경이 필요합니다.</li><li id="testNote">검증: JavaScript 구문 검사, DOM 모의 실행 42개 점검 및 수식 틀 63종의 양방향 구조 보존 검사 통과. 브라우저에서의 클릭·터치·복사·화면 배치는 자동 실행 검증하지 못했습니다.</li><li>실제 한컴오피스 한글에서의 붙여넣기, 실제 아이패드 Safari·한글 IME 기기 검증은 수행하지 않았습니다. 한글 출력의 모든 버전 호환성을 보장하지 않습니다.</li></ul><p>문법 기준: <a href="https://help.hancom.com/hoffice/multi/ko_kr/hwp/insert/equation/equation(explanation).htm" target="_blank" rel="noopener">한컴 수식 명령어 설명</a> · <a href="https://help.hancom.com/hoffice100/ko-KR/Hwp/insert/equation/equation(symbol).htm" target="_blank" rel="noopener">수식 기호 목록</a></p></details><footer>수식 공방 · 1.0 · 모든 처리는 이 기기 안에서 이루어집니다.</footer>
-</main><dialog id="matrixDialog"><h2 id="dialogTitle">행렬 만들기</h2><p class="sub">각 칸에 분수·근호를 넣을 수 있습니다.</p><label>행 수 <input id="rows" type="number" min="1" max="6" value="2"></label><label>열 수 <input id="cols" type="number" min="1" max="6" value="2"></label><div class="actions"><button id="cancelMatrix">취소</button><button class="primary" id="makeMatrix">삽입</button></div></dialog>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>수식 변환기 · LaTeX & 한글</title>
+<meta name="theme-color" content="#7453d6">
+<meta name="description" content="분수·근호·행렬을 눈으로 작성하고 LaTeX와 한글 수식 코드로 변환하는 수식 편집기">
+<meta name="apple-mobile-web-app-title" content="수식 변환기">
+<link rel="icon" href="./favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+<link rel="manifest" href="./site.webmanifest">
+<style>
+:root{--ink:#272338;--muted:#716b81;--purple:#7453d6;--pale:#f0ebff;--line:#e5e0ed}
+*{box-sizing:border-box}
+body{margin:0;background:#f5f3f9;color:var(--ink);font-family:system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif}
+main{max-width:1120px;margin:32px auto;padding:0 20px}
+header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:24px}
+h1{font-size:29px;letter-spacing:-1.3px;margin:6px 0}
+.version-inline{font-size:12px;font-weight:600;color:#8b8495;letter-spacing:0;margin-left:8px;white-space:nowrap}
+p{line-height:1.65;margin:6px 0}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--purple)}
+.sub{font-size:14px;color:var(--muted)}
+.badge{padding:9px 13px;border:1px solid var(--line);border-radius:24px;background:white;white-space:nowrap;font-size:12px;color:var(--muted)}
+.card{background:white;border:1px solid var(--line);border-radius:20px;margin-bottom:16px;overflow:hidden;box-shadow:0 4px 24px #3b1e6410}
+.sectionbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--line)}
+.sectionbar strong{font-size:14px}
+.actions{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+button,select,input{font:inherit}
+button,select{min-height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);padding:8px 13px;cursor:pointer}
+button:hover{background:var(--pale);border-color:#b8a6ea}
+button:active{transform:translateY(1px)}
+button:focus-visible,select:focus-visible{outline:3px solid #bda8f0;outline-offset:2px}
+button:disabled{opacity:.78;cursor:default}
+select{max-width:100%;font-size:13px}
+.primary{background:var(--purple);color:white;border-color:var(--purple);font-weight:700}
+.primary:hover{background:#6240c3;color:white}
+.quiet{border-color:transparent;background:#f7f5fa;font-size:13px}
+.editor-scroll{overflow-x:auto;padding:20px 24px 24px;min-height:210px;background:#faf8fd;overscroll-behavior-x:contain}
+.slot{display:inline-block;min-width:.8em;min-height:1.2em;vertical-align:middle;border-radius:4px;outline:none;white-space:pre;line-height:1.35;padding:1px 3px;border:1px solid transparent;caret-color:#6735d2}
+.slot:empty{min-width:1em;min-height:1.1em;border:1px dashed #a99ac9;background:#f6f2ff}
+.slot:focus{background:#f3edff80;border-color:#c7b5ef}
+.slot.active-slot{box-shadow:0 2px 0 #a88cde}
+.slot.invalid{border-color:#cb6c72;background:#fff5f5}
+.root{display:block;font-family:'Cambria Math','STIX Two Math','Times New Roman',serif;font-size:30px;width:100%;min-width:100%;min-height:150px;padding:16px 22px;white-space:normal;line-height:1.35;background:#fff;border:2px solid #c9b8ef;border-radius:14px;box-shadow:inset 0 1px 3px #3b1e6410;cursor:text}
+.root:empty{border:2px solid #c9b8ef;background:#fff}
+.root:empty:before{content:'여기를 눌러 수식을 입력하세요';font-family:system-ui,sans-serif;font-size:20px;color:#8c7aa9;pointer-events:none}
+.widget{display:inline-flex;align-items:center;vertical-align:middle;position:relative;margin:0 .08em;white-space:nowrap;line-height:1.2;border-radius:4px}
+.mathspace{display:inline-block;height:1.08em;vertical-align:middle;margin:0 .04em;border-bottom:1px dotted #a99ac9;outline:1px solid #eee9f8;border-radius:3px;background:linear-gradient(90deg,#faf8ff,#f4efff);cursor:default}
+.mathspace[data-size=small]{width:.34em}.mathspace[data-size=medium]{width:.78em}.mathspace[data-size=large]{width:1.38em}.mathspace[data-size=tight]{width:.16em;margin-inline:-.13em;border:0;outline:0;background:transparent;overflow:visible}.mathspace[data-size=tight]::after{content:'↔';display:block;position:absolute;inset:-.04em -.12em auto;font:700 9px/1 system-ui,sans-serif;color:#9577ca;letter-spacing:-3px}
+.stylewrap{padding:0 2px;border-bottom:1px dotted #aa9ac7}.stylewrap:before{content:attr(data-mode);align-self:flex-start;margin:0 2px 0 0;padding:1px 3px;border:1px solid #d8cdf0;border-radius:4px;color:#7050bd;background:#fbf9ff;font:700 9px/1 system-ui,sans-serif;letter-spacing:.2px}.stylewrap[data-mode=rm] .stylecontent{font-style:normal}.stylewrap[data-mode=it] .stylecontent{font-style:italic}
+.frac{flex-direction:column;text-align:center;padding:0 .09em}
+.frac>.slot{display:block}
+.frac>.slot:first-child{border-bottom:1.5px solid currentColor;border-radius:0;padding-bottom:3px}
+.frac>.slot:last-child{padding-top:3px}
+.script{align-items:center}
+.script>.small{font-size:.68em;align-self:flex-start;transform:translateY(-.38em);margin-left:-2px}
+.script.subscript>.small{align-self:flex-end;transform:translateY(.38em)}
+.rootrad>.radicand{border-top:1.5px solid currentColor;border-radius:0;min-height:1.2em}
+.radical{font-size:1.45em;line-height:1}
+.rootrad>.index{font-size:.55em;align-self:flex-start;margin-right:-.2em;z-index:1}
+.fence{font-size:1.4em;line-height:1;font-weight:300;transform:scaleY(1.15)}
+.fn{font-style:normal}
+.bigop{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 .1em}
+.bigop>.slot{font-size:.57em}
+.bigop>.op{font-size:1.65em;line-height:1.1}
+.bigop.lim>.op{font-size:1em}
+.binomstack{display:inline-flex;flex-direction:column;gap:5px;align-items:center}
+.prescript{font-size:.65em;align-self:flex-end;transform:translateY(.25em)}
+.acc{flex-direction:column;gap:0}
+.accentmark{font-size:.65em;height:.6em;line-height:.65em;align-self:stretch;text-align:center}
+.matrixgrid{display:grid;gap:7px 15px;padding:8px;align-items:center;text-align:center}
+.matrixwrap{padding:0 4px}
+.matrixwrap .fence{align-self:stretch;display:flex;align-items:center;font-size:1.8em;transform:none}
+.matrixwrap[data-style=bmatrix]{border-left:2px solid;border-right:2px solid;border-radius:3px}
+.matrixwrap[data-style=vmatrix]{border-left:1.5px solid;border-right:1.5px solid}
+.matrixwrap[data-style=aligned] .matrixgrid{column-gap:4px}
+.matrixwrap[data-style=aligned] .matrixgrid>.slot:nth-child(odd){text-align:right}
+.matrixwrap[data-style=aligned] .matrixgrid>.slot:nth-child(even),.matrixwrap[data-style=cases] .slot{text-align:left}
+.matrixwrap[data-style=pmatrix]{border-left:2px solid;border-right:2px solid;border-radius:22%}
+.textwidget .slot{font-family:system-ui,sans-serif;font-size:.8em}
+.editorfoot{padding:10px 20px;background:#fcfbfe;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.hint{font-size:12px;color:var(--muted)}
+.tabs{display:flex;overflow-x:auto;gap:6px;padding:14px 16px;border-bottom:1px solid var(--line);background:#faf8fd}
+.tab{white-space:nowrap;border-color:transparent;background:transparent;font-size:14px;min-width:70px}
+.tab.selected{background:var(--purple);color:white}
+.keys{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:8px;padding:16px;background:#f5f3f9;min-height:200px}
+.key{min-height:63px;padding:5px 3px;border:0;box-shadow:0 1px 2px #30104a08;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+.key .symbol{font-family:'Cambria Math','Times New Roman',serif;font-size:25px;line-height:1.15}
+.key .keyname{max-width:100%;overflow:hidden;text-overflow:ellipsis;font-size:10px;color:#8a8098;line-height:1.2;white-space:nowrap}
+.character-controls{grid-column:1/-1;display:flex;gap:6px;flex-wrap:wrap;padding:0 0 4px}
+.character-controls button{min-height:40px;flex:1 1 92px;padding:6px 10px;font-size:13px}
+.character-controls button.selected{background:var(--purple);color:#fff;border-color:var(--purple)}
+.character-controls button:disabled{opacity:.42}
+.output{padding:20px}
+.formatrow{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.radios{display:flex;gap:6px}
+.choice{display:flex;align-items:center;gap:7px;padding:10px 15px;border:1px solid var(--line);border-radius:12px;min-height:46px;cursor:pointer;font-size:14px}
+.choice:has(input:checked){border-color:var(--purple);background:var(--pale);color:#603caf;font-weight:700}
+input[type=radio]{accent-color:var(--purple);width:16px;height:16px}
+.code{display:block;width:100%;resize:vertical;min-height:112px;padding:16px;background:#282335;color:#efe8ff;border:0;border-radius:12px;font:15px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:2;overflow-wrap:anywhere}
+.code:focus{outline:3px solid #bda8f0;outline-offset:2px}
+.code.editing{box-shadow:inset 0 0 0 2px #8e70e0}
+.code.error{box-shadow:inset 0 0 0 2px #d87b70}
+.outbottom{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:14px}
+.notice{font-size:13px;line-height:1.5;color:#8c5844;min-height:20px;margin-top:10px}
+.notice.good{color:#57806a}
+.status{font-size:13px;color:var(--purple)}
+details{font-size:13px;line-height:1.8;color:var(--muted);margin:16px 4px 30px}
+summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center}
+details ul{padding-left:20px}
+a{color:var(--purple)}
+dialog{border:1px solid var(--line);border-radius:20px;padding:26px;max-width:420px;width:calc(100% - 32px);box-shadow:0 20px 90px #271c4540}
+dialog::backdrop{background:#21173055}
+dialog h2{margin-top:0;font-size:20px}
+dialog label{display:flex;justify-content:space-between;align-items:center;margin:15px 0}
+dialog input{width:86px;min-height:44px;padding:8px;border:1px solid var(--line);border-radius:8px}
+dialog .actions{justify-content:flex-end;margin-top:20px}
+#matrixTools{display:none;padding:12px 18px;background:#faf8ff;border-top:1px solid var(--line)}
+#matrixTools.visible{display:flex}
+footer{font-size:11px;color:#a09aa9;text-align:center;margin:20px}
+.symbol sub,.symbol sup{font-size:.55em}
+.symbol .blank-key{display:inline-block;height:.92em;vertical-align:middle;border-bottom:1.5px dotted #7d7094;border-radius:2px;background:#f5f1ff}.symbol .blank-key.small{width:.34em}.symbol .blank-key.medium{width:.78em}.symbol .blank-key.large{width:1.35em}.symbol .blank-key.tight{width:.9em;border:0;background:transparent;color:#7755b8;font:700 11px/1 system-ui,sans-serif;letter-spacing:-3px}
+.symbol .tinyfrac{display:inline-flex;flex-direction:column;font-size:.65em;vertical-align:middle}
+.tinyfrac span:first-child{border-bottom:1px solid}
+/* Desktop geometry is preserved; mobile controls use the available device width. */
+@media(max-width:700px){
+ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+ main{width:100%;min-width:0;margin:16px auto;padding:0 max(10px,env(safe-area-inset-left)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-right))}
+ header{min-width:0;padding:0 4px;gap:10px;margin-bottom:16px}
+ header>div{min-width:0;width:100%}
+ h1{font-size:25px;line-height:1.35;letter-spacing:-1px}
+ .version-inline{display:block;white-space:normal;overflow-wrap:anywhere;margin:4px 0 0;font-size:11px;letter-spacing:0}
+ .eyebrow{font-size:10px;letter-spacing:1.6px}
+ .sub{font-size:13px;overflow-wrap:anywhere}
+ .badge{display:none}
+ .card{min-width:0;border-radius:16px;margin-bottom:12px}
+ .sectionbar{padding:12px;gap:10px;min-width:0}
+ .sectionbar>.actions{display:grid;grid-template-columns:minmax(0,1fr) 44px minmax(0,1fr);width:100%;gap:6px}
+ #examples{grid-column:1/-1;width:100%}
+ .sectionbar>.actions button{min-width:0;white-space:normal;padding:8px 6px;font-size:13px}
+ button,select,input{touch-action:manipulation}
+ select,dialog input{font-size:16px}
+ .editor-scroll{min-width:0;min-height:176px;padding:14px 10px 16px;max-width:100%;-webkit-overflow-scrolling:touch}
+ .root{font-size:26px;min-height:130px;padding:14px 10px;overflow-wrap:anywhere}
+ .root:empty:before{font-size:16px;line-height:1.6;white-space:normal}
+ .editorfoot{padding:10px;gap:8px;min-width:0}
+ .editorfoot>.hint{width:100%;overflow-wrap:anywhere}
+ .editorfoot>.actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:6px}
+ .editorfoot button{min-width:0;min-height:44px;padding:7px 3px;font-size:12px;white-space:normal;line-height:1.35}
+ .tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:8px;gap:4px;overflow:visible}
+ .tab{min-width:0;min-height:44px;padding:6px 2px;font-size:12px}
+ .keys{grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding:10px;min-height:0}
+ .key{min-width:0;min-height:60px;gap:4px}
+ .key .symbol{font-size:24px;max-width:100%}
+ .key .keyname{font-size:10px}
+ .character-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;min-width:0}
+ .character-controls button{min-width:0;min-height:44px;padding:6px 4px;font-size:13px}
+ #matrixTools{padding:10px;gap:6px;min-width:0}
+ #matrixTools>.hint{flex-basis:100%;overflow-wrap:anywhere}
+ #matrixTools button{flex:1 1 44px;min-width:0;padding:8px 4px;font-size:13px}
+ .output{padding:12px;min-width:0}
+ .formatrow{gap:10px;margin-bottom:12px}
+ .radios{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:8px}
+ .choice{min-width:0;justify-content:center;padding:10px 6px;font-size:14px}
+ #wrapper{width:100%;min-width:0}
+ .code{min-width:0;font-size:16px;padding:12px;min-height:120px}
+ .outbottom{flex-direction:column;align-items:stretch;gap:12px;margin-top:12px;min-width:0}
+ .outbottom>div{min-width:0}
+ #copy{width:100%;min-height:48px;font-size:16px}
+ .notice,.hint,.status{overflow-wrap:anywhere}
+ details{margin:12px 2px 24px;overflow-wrap:anywhere}
+ details ul{padding-left:18px}
+ dialog{max-height:calc(100dvh - 32px);overflow-y:auto;padding:20px}
+ dialog label{gap:12px}
+ footer{margin:16px 0;overflow-wrap:anywhere}
+}
+@media(max-width:380px){
+ .keys{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;padding:8px}
+ .editorfoot button{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}
+}
+
+</style>
+</head>
+<body>
+<main>
+<header>
+<div>
+<div class="eyebrow">MATH FORMULA STUDIO</div>
+<h1>수식 변환기<span class="version-inline" id="versionInline"></span></h1>
+<p class="sub">눈으로 만들고, 원하는 문법으로 복사하세요.</p>
+</div>
+<span class="badge">단일 파일 · 오프라인 사용</span>
+</header>
+<section class="card" aria-label="수식 편집">
+<div class="sectionbar">
+<strong>01 &nbsp; 수식 작성</strong>
+<div class="actions">
+<select id="examples" aria-label="예제 불러오기">
+<option value="">예제 불러오기</option>
+</select>
+<button class="quiet" id="undo" title="실행 취소 Ctrl+Z">↶ 실행 취소</button>
+<button class="quiet" id="redo" aria-label="다시 실행" title="다시 실행 Ctrl+Shift+Z">↷</button>
+<button class="quiet" id="clear">전체 지우기</button>
+</div>
+</div>
+<div class="editor-scroll">
+<div class="hint" style="margin:0 0 8px 4px;color:#695384;font-weight:700">수식 입력창</div>
+<div id="editor" class="slot root" data-label="전체 수식" contenteditable="true" spellcheck="false" autocapitalize="off" autocorrect="off" role="textbox" aria-label="시각적 수식 편집 영역" aria-multiline="false">
+</div>
+</div>
+<div class="editorfoot">
+<span class="hint" id="location">빈칸을 눌러 입력 · Tab으로 다음 칸</span>
+<div class="actions">
+<button class="quiet" id="styleIt" title="같은 입력칸 안에서 드래그한 수식을 이탤릭체로">it 이탤릭</button>
+<button class="quiet" id="styleRm" title="같은 입력칸 안에서 드래그한 수식을 로만체로">rm 로만</button>
+<button class="quiet" id="prev">‹ 이전 입력칸</button>
+<button class="quiet" id="next">다음 입력칸 ›</button>
+<button class="quiet" id="exit">틀 밖으로 →</button>
+<button class="quiet" id="erase" aria-label="앞 글자 지우기">⌫ 지우기</button>
+</div>
+</div>
+<div id="matrixTools" class="actions">
+<span class="hint">선택한 행렬</span>
+<button class="quiet" data-resize="row+">행 +</button>
+<button class="quiet" data-resize="row-">행 −</button>
+<button class="quiet" data-resize="col+">열 +</button>
+<button class="quiet" data-resize="col-">열 −</button>
+<span class="hint">추가는 끝에, 삭제는 현재 행·열에 적용</span>
+</div>
+</section>
+<section class="card" aria-label="수식 키보드">
+<nav class="tabs" id="tabs" aria-label="기호 종류">
+</nav>
+<div class="keys" id="keys">
+</div>
+</section>
+<section class="card">
+<div class="sectionbar">
+<strong>02 &nbsp; 코드 출력</strong>
+<span class="hint">같은 수식, 두 가지 문법</span>
+</div>
+<div class="output">
+<div class="formatrow">
+<div class="radios">
+<label class="choice">
+<input type="radio" name="format" value="latex" checked>LaTeX</label>
+<label class="choice">
+<input type="radio" name="format" value="hwp">한글 수식</label>
+</div>
+<select id="wrapper" aria-label="LaTeX 감싸기">
+<option value="none">수식 본문만</option>
+<option value="inline">$ … $ 인라인</option>
+<option value="display">\[ … \] 독립 수식</option>
+</select>
+</div>
+<textarea class="code" id="code" spellcheck="false" autocapitalize="off" autocorrect="off" aria-label="변환된 수식 코드" aria-describedby="codeEditHelp">
+</textarea>
+<div id="issues" class="notice" aria-live="polite">
+</div>
+<div class="outbottom">
+<div>
+<p class="hint" id="outputHelp">
+</p>
+<p class="hint" id="codeEditHelp">코드를 수정하면 잠시 뒤 수식 입력창에 반영합니다. Ctrl/⌘+Enter는 즉시 반영, Esc는 취소이며 불완전한 코드는 반영하지 않습니다.</p>
+<p class="status" id="status" aria-live="polite">
+</p>
+</div>
+<button class="primary" id="copy">코드 복사</button>
+</div>
+</div>
+</section>
+<details>
+<summary>사용 방법 · 호환성 · 검증 범위</summary>
+<ul>
+<li>분수·근호 등의 버튼 → 점선 입력칸 선택 → 숫자·문자 입력. 선택한 수식에 버튼을 누르면 해당 구조로 감쌉니다. 선택이 없으면 지수·근호 버튼도 새 입력 틀을 만듭니다.</li>
+<li>Tab / Shift+Tab: 입력칸 이동. 방향키: 글자 이동, 입력칸 경계에서는 틀 밖으로 이동. ‘틀 밖으로’로 분모·지수 등의 입력을 마치고 뒤에 이어 쓸 수 있습니다.</li>
+<li>텍스트 버튼 안에서는 일반 설명과 한글을 입력하세요. 수식 영역의 Space는 작은 빈칸으로 입력되어 LaTeX <code>\,</code>, 한글 수식 <code>'</code>로 출력됩니다. ^, _, / 키는 각각 지수·아래첨자·분수 틀을 만듭니다. 코드 출력창도 직접 수정할 수 있으며, 이 프로그램이 출력하는 LaTeX·한글 수식 문법과 기본 직접 입력은 시각적 수식으로 다시 반영합니다.</li>
+<li><b>빈칸:</b> 기본 탭의 작은·중간·큰 빈칸은 수식 안의 실제 간격입니다. 예를 들어 <code>1, 작은 빈칸 2</code>는 LaTeX에서 <code>1,\,2</code>, 한글 수식에서 <code>1,'2</code>로 출력됩니다.</li>
+<li><b>좁게 붙이기:</b> LaTeX에서는 음수 간격 <code>\!</code>로 출력됩니다. 한글 수식의 공식 스크립트 명령에서는 이에 해당하는 명령을 확인하지 못했으므로, 한글 출력에서는 생략하고 안내를 표시합니다. 한글 결과까지 같은 간격이 꼭 필요하면 최종 편집기에서 직접 조정하세요.</li>
+<li><b>이탤릭·로만체:</b> 같은 입력칸 안에서 수식을 드래그한 뒤 <code>it 이탤릭</code> 또는 <code>rm 로만</code>을 누르세요. 출력은 각각 <code>\mathit{…}</code>/<code>{it {…}}</code>, <code>\mathrm{…}</code>/<code>{rm {…}}</code>로 보존됩니다. 분자·분모처럼 서로 다른 입력칸은 따로 적용해야 합니다.</li>
+<li><b>시험지 조판:</b> 일반 변수는 이탤릭체를 기본으로 두고, 함수명·도형·확률과 통계의 약자 등은 필요한 범위만 로만체로 바꾸세요. 쉼표·괄호·연산기호 주위의 간격은 일반 스페이스가 아니라 빈칸 버튼으로 고정해야 한글 수식 출력에서도 사라지지 않습니다.</li>
+<li>여러 줄은 ‘행렬·여러 줄’ 탭의 틀을 사용하세요. 정렬 수식의 두 번째 칸은 등호를 포함하여 입력하세요. 행렬 원소 안에도 수식 틀을 넣을 수 있습니다.</li>
+<li>한글 출력은 수식 편집기의 <b>스크립트 입력 창</b>에 붙여넣으세요. 본문에 붙여넣으면 수식 개체로 바뀌지 않습니다.</li>
+<li>외부 라이브러리·CDN·서버·저장소를 사용하지 않습니다. 이 HTML 파일은 오프라인으로 작동하며 새로고침하면 작성 내용이 초기화됩니다.</li>
+<li>브라우저의 시각적 수식은 자체 HTML/CSS 편집 표시입니다. LaTeX 및 한글의 최종 조판과 글꼴·간격이 다를 수 있습니다. 한글이 포함된 LaTeX는 한글을 지원하는 조판 환경이 필요합니다.</li>
+<li id="testNote">검증: 모바일·태블릿·PC 화면 폭의 브라우저 자동 검사와 예제 수식 출력 비교를 수행했습니다. 실제 기기의 가상 키보드·한글 IME 동작은 기기별로 차이가 있을 수 있습니다.</li>
+<li>실제 한컴오피스 한글에서의 붙여넣기, 실제 아이패드 Safari·한글 IME 기기 검증은 수행하지 않았습니다. 한글 출력의 모든 버전 호환성을 보장하지 않습니다.</li>
+</ul>
+<p>문법 기준: <a href="https://help.hancom.com/hoffice/multi/ko_kr/hwp/insert/equation/equation(explanation).htm" target="_blank" rel="noopener">한컴 수식 명령어 설명</a> · <a href="https://help.hancom.com/hoffice100/ko-KR/Hwp/insert/equation/equation(symbol).htm" target="_blank" rel="noopener">수식 기호 목록</a>
+</p>
+</details>
+<footer id="versionFooter"></footer>
+</main>
+<dialog id="matrixDialog">
+<h2 id="dialogTitle">행렬 만들기</h2>
+<p class="sub">각 칸에 분수·근호를 넣을 수 있습니다.</p>
+<label>행 수 <input id="rows" type="number" min="1" max="6" value="2">
+</label>
+<label>열 수 <input id="cols" type="number" min="1" max="6" value="2">
+</label>
+<div class="actions">
+<button id="cancelMatrix">취소</button>
+<button class="primary" id="makeMatrix">삽입</button>
+</div>
+</dialog>
 <script>
 'use strict';
 const $=s=>document.querySelector(s), editor=$('#editor');
+// 버전은 이 값만 바꾸면 제목과 하단 표기가 함께 바뀝니다.
+const APP_VERSION='1.05',APP_AUTHOR='yoonsungho';
+function showVersion(){const label=`ver${APP_VERSION} made by ${APP_AUTHOR}`;$('#versionInline').textContent=`(${label})`;$('#versionFooter').textContent=label;}
 const clone=x=>JSON.parse(JSON.stringify(x));
 // 문법과 표시를 분리한 구조 노드. 문자열은 잎, 객체는 수식 틀입니다.
 const S=(v='')=>[v], N=(kind,parts=[],meta={})=>({kind,parts:parts.map(p=>Array.isArray(p)?p:S(p)),...meta});
@@ -41,6 +340,8 @@ function render(n){
  else if(kind==='comb'){w.append(p(0,'전체 개수 n','prescript'),t(n.symbol),p(1,'선택 개수 r','prescript'));}
  else if(kind==='binom'){const stack=el('span','binomstack');stack.append(p(0,'위 항'),p(1,'아래 항'));w.append(el('span','fence','('),stack,el('span','fence',')'));}
  else if(kind==='accent'){w.classList.add('acc');w.append(el('span','accentmark',({vec:'⟶',bar:'―',hat:'ˆ',dot:'˙',ddot:'¨'})[n.accent]),p(0,'장식할 수식'));}
+ else if(kind==='space'){w.classList.add('mathspace');w.dataset.size=n.size;w.setAttribute('role','img');w.setAttribute('aria-label',{small:'작은 빈칸',medium:'중간 빈칸',large:'큰 빈칸',tight:'좁게 붙이기 (음수 간격)'}[n.size]||'빈칸');w.title={small:'작은 빈칸: LaTeX \\, / 한글 \'',medium:'중간 빈칸: LaTeX \\: / 한글 ~',large:'큰 빈칸: LaTeX \\; / 한글 ~~',tight:'좁게 붙이기: LaTeX \\! / 한글 수식에서는 공식 스크립트 명령을 확인하지 못해 출력 시 생략'}[n.size]||'빈칸';}
+ else if(kind==='style'){w.classList.add('stylewrap');w.dataset.mode=n.mode;w.append(p(0,n.mode==='rm'?'로만체 범위':'이탤릭체 범위','stylecontent'));}
  else if(kind==='text'){w.classList.add('textwidget');w.append(p(0,'설명 텍스트'));}
  else if(kind==='matrix'){w.classList.add('matrixwrap');w.dataset.style=n.style;const grid=el('span','matrixgrid');grid.style.gridTemplateColumns=`repeat(${n.cols},auto)`;n.parts.forEach((d,i)=>grid.append(slot(d,`${Math.floor(i/n.cols)+1}행 ${i%n.cols+1}열`)));if(n.style==='cases')w.append(el('span','fence','{'));w.append(grid);}
  else throw new Error('알 수 없는 구조: '+kind);
@@ -50,30 +351,33 @@ function render(n){
 function readSlot(e){let out=[];e.childNodes.forEach(c=>{if(c.nodeType===3){if(c.textContent)out.push(c.textContent.replace(/\u200b/g,''));}else if(c.nodeType===1){if(c.classList.contains('widget')){let parts=[...c.querySelectorAll('.slot')].filter(s=>s.closest('.widget')===c).map(readSlot);if(c.dataset.kind==='root'||c.dataset.kind==='func'&&JSON.parse(c.dataset.meta).base)parts=[parts[1],parts[0]];if(c.dataset.kind==='big'){const meta=JSON.parse(c.dataset.meta);parts=meta.bounds?[parts[1],parts[0],parts[2],...(parts[3]?[parts[3]]:[])]:[[],[],parts[0],...(parts[1]?[parts[1]]:[])];}out.push({kind:c.dataset.kind,parts,...JSON.parse(c.dataset.meta)});}else if(c.tagName!=='BR')out.push(...readSlot(c));}});return out;}
 // 2개의 독립 직렬화기에서 사용하는 안전한 문자 변환.
 function chars(str,fmt,issues,textMode=false){let result='';for(const c of str){if(textMode){if(fmt==='latex'){const escapes={'\\':'\\textbackslash{}','{':'\\{','}':'\\}','$':'\\$','&':'\\&','#':'\\#','%':'\\%','_':'\\_','^':'\\textasciicircum{}','~':'\\textasciitilde{}'};result+=escapes[c]||c;}else{if(c==='"'||c==='\n'){issues.push('설명 텍스트의 따옴표·줄바꿈은 한글 출력에서 지원하지 않습니다.');}result+=c==='"'?'':c;}continue;}if(SYMBOLS[c]){result+=' '+SYMBOLS[c][fmt]+' ';if(fmt==='hwp'&&['∖','∥','·'].includes(c))issues.push('안내: '+c+'는 한글에서 유니코드 기호로 출력합니다. 대상 글꼴에서 확인하세요.');if(fmt==='hwp'&&'ℝℤℕ'.includes(c))issues.push('안내: 한글 출력의 수 집합 문자는 보통 R·Z·N으로 대체됩니다.');}else if(/[a-zA-Z0-9+\-=.,:;!<>()[\]| ]/.test(c))result+=c;else if(c==='{'||c==='}')result+=fmt==='latex'?'\\'+c:c==='{'?' LEFT { ':' RIGHT } ';else if(c==='%')result+=fmt==='latex'?'\\%':' % ';else if(/[가-힣ㄱ-ㅎㅏ-ㅣ]/.test(c))result+=fmt==='latex'?'\\text{'+c+'}':'"'+c+'"';else{issues.push('지원하지 않는 직접 입력 기호: '+c+' — 기호 버튼이나 텍스트 기능을 사용하세요.');result+=c;}}return result;}
-function latex(seq,issues=[]){return seq.map(n=>{if(typeof n==='string')return chars(n,'latex',issues);const a=i=>latex(n.parts[i]||[],issues),g=i=>'{'+a(i)+'}';switch(n.kind){case'frac':return'\\frac'+g(0)+g(1);case'sup':return g(0)+'^'+g(1);case'sub':return g(0)+'_'+g(1);case'sqrt':return'\\sqrt'+g(0);case'root':return'\\sqrt['+a(1)+']'+g(0);case'fence':{const d=x=>({'{':'\\{','}':'\\}','‖':'\\Vert'})[x]||x;return'\\left'+d(n.left)+' '+a(0)+' \\right'+d(n.right);}case'func':return'\\'+n.name+(n.base?'_'+g(1):'')+' '+g(0);case'big':return({'∫':'\\int','∑':'\\sum','∏':'\\prod'})[n.op]+(n.bounds?'_'+g(0)+'^'+g(1):'')+' '+g(2)+(n.op==='∫'?'\\,\\mathrm{d}'+g(3):'');case'lim':return'\\lim_'+g(0)+' '+g(1);case'comb':return'{}_'+g(0)+(n.symbol==='Π'?'\\Pi':'\\mathrm{'+n.symbol+'}')+'_'+g(1);case'binom':return'\\binom'+g(0)+g(1);case'accent':return'\\'+({vec:'overrightarrow',bar:'overline',hat:'widehat',dot:'dot',ddot:'ddot'})[n.accent]+g(0);case'text':return'\\text{'+chars(flatText(n.parts[0]),'latex',issues,true)+'}';case'matrix':{let rows=[];for(let i=0;i<n.rows;i++)rows.push(n.parts.slice(i*n.cols,(i+1)*n.cols).map(x=>latex(x,issues)).join(' & '));return'\\begin{'+n.style+'}'+rows.join(' \\\\ ')+'\\end{'+n.style+'}';}default:issues.push('지원되지 않는 구조');return'';}}).join('');}
-function hwp(seq,issues=[]){return seq.map(n=>{if(typeof n==='string')return chars(n,'hwp',issues);const a=i=>hwp(n.parts[i]||[],issues),g=i=>'{'+a(i)+'}';switch(n.kind){case'frac':return'{'+g(0)+' OVER '+g(1)+'}';case'sup':return g(0)+'^'+g(1);case'sub':return g(0)+'_'+g(1);case'sqrt':return'SQRT '+g(0);case'root':return'SQRT '+g(1)+' OF '+g(0);case'fence':if(n.left==='‖'){issues.push('안내: 벡터 크기는 한글에서 세로줄 두 쌍으로 표시합니다. 간격을 확인하세요.');return'LEFT | LEFT | '+a(0)+' RIGHT | RIGHT |';}return'LEFT '+n.left+' '+a(0)+' RIGHT '+n.right;case'func':return'{rm '+n.name+'}'+(n.base?'_'+g(1):'')+' '+g(0);case'big':return({'∫':'INT','∑':'SUM','∏':'PROD'})[n.op]+(n.bounds?'_'+g(0)+'^'+g(1):'')+' '+g(2)+(n.op==='∫'?' {rm d}'+g(3):'');case'lim':return'lim_'+g(0)+' '+g(1);case'comb':return'{}_'+g(0)+(n.symbol==='Π'?' Pi ':'{rm '+n.symbol+'}')+'_'+g(1);case'binom':return'BINOM '+g(0)+' '+g(1);case'accent':return n.accent.toUpperCase()+' '+g(0);case'text':return'"'+chars(flatText(n.parts[0]),'hwp',issues,true)+'"';case'matrix':{const cmd=({matrix:'MATRIX',pmatrix:'PMATRIX',bmatrix:'BMATRIX',vmatrix:'DMATRIX',cases:'CASES',aligned:'EQALIGN'})[n.style];let rows=[];for(let i=0;i<n.rows;i++)rows.push(n.parts.slice(i*n.cols,(i+1)*n.cols).map(x=>hwp(x,issues)).join(' & '));return cmd+'{'+rows.join(' # ')+'}';}default:issues.push('지원되지 않는 구조');return'';}}).join(' ');}
+function latex(seq,issues=[]){return seq.map(n=>{if(typeof n==='string')return chars(n,'latex',issues);const a=i=>latex(n.parts[i]||[],issues),g=i=>'{'+a(i)+'}';switch(n.kind){case'frac':return'\\frac'+g(0)+g(1);case'sup':return g(0)+'^'+g(1);case'sub':return g(0)+'_'+g(1);case'sqrt':return'\\sqrt'+g(0);case'root':return'\\sqrt['+a(1)+']'+g(0);case'fence':{const d=x=>({'{':'\\{','}':'\\}','‖':'\\Vert'})[x]||x;return'\\left'+d(n.left)+' '+a(0)+' \\right'+d(n.right);}case'func':return'\\'+n.name+(n.base?'_'+g(1):'')+' '+g(0);case'big':return({'∫':'\\int','∑':'\\sum','∏':'\\prod'})[n.op]+(n.bounds?'_'+g(0)+'^'+g(1):'')+' '+g(2)+(n.op==='∫'?'\\,\\mathrm{d}'+g(3):'');case'lim':return'\\lim_'+g(0)+' '+g(1);case'comb':return'{}_'+g(0)+(n.symbol==='Π'?'\\Pi':'\\mathrm{'+n.symbol+'}')+'_'+g(1);case'binom':return'\\binom'+g(0)+g(1);case'accent':return'\\'+({vec:'overrightarrow',bar:'overline',hat:'widehat',dot:'dot',ddot:'ddot'})[n.accent]+g(0);case'space':return({small:'\\,',medium:'\\:',large:'\\;',tight:'\\!'}[n.size]||'\\,');case'style':return'\\'+(n.mode==='rm'?'mathrm':'mathit')+g(0);case'text':return'\\text{'+chars(flatText(n.parts[0]),'latex',issues,true)+'}';case'matrix':{let rows=[];for(let i=0;i<n.rows;i++)rows.push(n.parts.slice(i*n.cols,(i+1)*n.cols).map(x=>latex(x,issues)).join(' & '));return'\\begin{'+n.style+'}'+rows.join(' \\\\ ')+'\\end{'+n.style+'}';}default:issues.push('지원되지 않는 구조');return'';}}).join('');}
+function hwp(seq,issues=[]){return seq.map(n=>{if(typeof n==='string')return chars(n,'hwp',issues);const a=i=>hwp(n.parts[i]||[],issues),g=i=>'{'+a(i)+'}';switch(n.kind){case'frac':return'{'+g(0)+' OVER '+g(1)+'}';case'sup':return g(0)+'^'+g(1);case'sub':return g(0)+'_'+g(1);case'sqrt':return'SQRT '+g(0);case'root':return'SQRT '+g(1)+' OF '+g(0);case'fence':if(n.left==='‖'){issues.push('안내: 벡터 크기는 한글에서 세로줄 두 쌍으로 표시합니다. 간격을 확인하세요.');return'LEFT | LEFT | '+a(0)+' RIGHT | RIGHT |';}return'LEFT '+n.left+' '+a(0)+' RIGHT '+n.right;case'func':return'{rm '+n.name+'}'+(n.base?'_'+g(1):'')+' '+g(0);case'big':return({'∫':'INT','∑':'SUM','∏':'PROD'})[n.op]+(n.bounds?'_'+g(0)+'^'+g(1):'')+' '+g(2)+(n.op==='∫'?' {rm d}'+g(3):'');case'lim':return'lim_'+g(0)+' '+g(1);case'comb':return'{}_'+g(0)+(n.symbol==='Π'?' Pi ':'{rm '+n.symbol+'}')+'_'+g(1);case'binom':return'BINOM '+g(0)+' '+g(1);case'accent':return n.accent.toUpperCase()+' '+g(0);case'space':if(n.size==='tight'){issues.push('안내: 한글 수식의 공식 스크립트에서는 좁게 붙이기(음수 간격) 명령을 확인하지 못해 이 간격은 출력하지 않았습니다.');return'';}return({small:"'",medium:'~',large:'~~'}[n.size]||"'");case'style':return'{'+(n.mode==='rm'?'rm':'it')+' '+g(0)+'}';case'text':return'"'+chars(flatText(n.parts[0]),'hwp',issues,true)+'"';case'matrix':{const cmd=({matrix:'MATRIX',pmatrix:'PMATRIX',bmatrix:'BMATRIX',vmatrix:'DMATRIX',cases:'CASES',aligned:'EQALIGN'})[n.style];let rows=[];for(let i=0;i<n.rows;i++)rows.push(n.parts.slice(i*n.cols,(i+1)*n.cols).map(x=>hwp(x,issues)).join(' & '));return cmd+'{'+rows.join(' # ')+'}';}default:issues.push('지원되지 않는 구조');return'';}}).join('');}
 function flatText(seq){return seq.map(n=>typeof n==='string'?n:n.parts.map(flatText).join('')).join('');}
 let savedRange=null,composing=false,history=[],historyIndex=-1,activeMatrix=null;
 function owner(node){return(node?.nodeType===3?node.parentElement:node)?.closest('.slot');}
 function capture(){const s=getSelection();if(!s.rangeCount)return;const r=s.getRangeAt(0);if(editor.contains(r.commonAncestorContainer)||r.commonAncestorContainer===editor){savedRange=r.cloneRange();let current=owner(r.startContainer);editor.querySelectorAll('.active-slot').forEach(e=>e.classList.remove('active-slot'));if(current&&current!==editor)current.classList.add('active-slot');$('#location').textContent=(current?.dataset.label||'전체 수식')+' · Tab으로 이동';activeMatrix=(r.startContainer.nodeType===3?r.startContainer.parentElement:r.startContainer).closest('[data-kind="matrix"]');$('#matrixTools').classList.toggle('visible',!!activeMatrix);}}
 document.addEventListener('selectionchange',capture);
-function restore(){if(savedRange&&editor.contains(savedRange.startContainer)&&editor.contains(savedRange.endContainer)){let s=getSelection();s.removeAllRanges();s.addRange(savedRange);return savedRange;}return place(editor,true);}
+function restore(){clean();if(savedRange&&editor.contains(savedRange.startContainer)&&editor.contains(savedRange.endContainer)){let s=getSelection();s.removeAllRanges();s.addRange(savedRange);return savedRange;}return place(editor,!!(editor.textContent||editor.querySelector('.widget')));}
 function place(e,end=false){e.focus({preventScroll:true});const r=document.createRange();r.selectNodeContents(e);r.collapse(!end);getSelection().removeAllRanges();getSelection().addRange(r);savedRange=r.cloneRange();capture();return r;}
 function after(w,before=false){let parent=w.parentElement;while(parent&&!parent.classList.contains('slot'))parent=parent.parentElement;if(!parent)return;parent.focus({preventScroll:true});let r=document.createRange();before?r.setStartBefore(w):r.setStartAfter(w);r.collapse(true);getSelection().removeAllRanges();getSelection().addRange(r);savedRange=r.cloneRange();capture();}
 function snapshot(){const ast=readSlot(editor),data=JSON.stringify(ast);if(history[historyIndex]===data)return;history=history.slice(0,historyIndex+1);history.push(data);if(history.length>150)history.shift();historyIndex=history.length-1;updateHistory();}
 function updateHistory(){$('#undo').disabled=historyIndex<=0;$('#redo').disabled=historyIndex>=history.length-1;}
-function setAST(ast,record=true){editor.replaceChildren(...ast.map(n=>typeof n==='string'?document.createTextNode(n):render(n)));savedRange=null;place(editor,true);if(record)snapshot();update();}
+function setAST(ast,record=true,focusEditor=true){editor.replaceChildren(...ast.map(n=>typeof n==='string'?document.createTextNode(n):render(n)));savedRange=null;if(focusEditor)place(editor,ast.length>0);if(record)snapshot();update();}
 function undo(dir){let i=historyIndex+dir;if(i<0||i>=history.length)return;historyIndex=i;setAST(JSON.parse(history[i]),false);updateHistory();}
 function clean(){editor.querySelectorAll('.slot').forEach(e=>{if(e.innerHTML==='<br>')e.replaceChildren();});if(editor.innerHTML==='<br>')editor.replaceChildren();}
-function changed(){clean();snapshot();update();}
+function changed(){discardPendingCodeEdit();clean();snapshot();update();}
 function sameSlot(r){return owner(r.startContainer)===owner(r.endContainer);}
 function insert(value){const r=restore();if(!sameSlot(r)){message('하나의 입력칸 안에서 수식을 선택해 주세요.');return null;}const current=owner(r.startContainer);if(current?.closest('[data-kind="text"]')&&typeof value!=='string'){message('설명 텍스트 안에는 수식 틀을 넣을 수 없습니다. 틀 밖으로 이동하세요.');return null;}let node;
  if(typeof value==='string'){node=document.createTextNode(value);r.deleteContents();r.insertNode(node);const nr=document.createRange();nr.setStart(node,node.length);nr.collapse(true);getSelection().removeAllRanges();getSelection().addRange(nr);savedRange=nr;}
  else{value=clone(value);if(!r.collapsed){const holder=el('span');holder.append(r.cloneContents());value.parts[0]=readSlot(holder);}node=render(value);r.deleteContents();r.insertNode(node);const target=[...node.querySelectorAll('.slot')].find(s=>!s.textContent&&!s.querySelector('.widget'))||node.querySelector('.slot');target?place(target):after(node);}
  changed();capture();return node;}
-// 제곱·거듭제곱·아래첨자는 빈 밑칸을 만들지 않고, 커서 바로 앞의 숫자·문자·수식 전체를 밑으로 사용합니다.
-function selectPreviousAtom(){const r=restore();if(!r.collapsed)return true;const current=owner(r.startContainer);if(!current)return false;const selectText=(node,end)=>{const before=node.data.slice(0,end);const found=before.match(/[A-Za-z0-9가-힣]+(?:\.[0-9]*)?$/);if(!found)return false;const next=document.createRange();next.setStart(node,end-found[0].length);next.setEnd(node,end);const s=getSelection();s.removeAllRanges();s.addRange(next);savedRange=next;return true;};if(r.startContainer.nodeType===3&&r.startOffset>0)return selectText(r.startContainer,r.startOffset);let container=r.startContainer,offset=r.startOffset;if(container.nodeType===3){offset=[...container.parentNode.childNodes].indexOf(container);container=container.parentNode;}while(container&&container!==current){if(offset>0)break;offset=[...container.parentNode.childNodes].indexOf(container);container=container.parentNode;}const previous=container?.childNodes?.[offset-1];if(!previous)return false;if(previous.nodeType===3)return selectText(previous,previous.data.length);if(previous.classList?.contains('widget')){const next=document.createRange();next.selectNode(previous);const s=getSelection();s.removeAllRanges();s.addRange(next);savedRange=next;return true;}return false;}
-function applyScript(kind){if(!selectPreviousAtom()){message('먼저 밑이 될 숫자나 수식을 입력하세요.');return;}const isSquare=kind==='square';const node=insert(N(kind==='sub'?'sub':'sup',['',isSquare?'2':'']));if(isSquare&&node)after(node);}
+// 서체는 선택한 범위를 하나의 구조 노드로 묶어 LaTeX·한글 출력에 모두 보존합니다.
+function applyTextStyle(mode){const r=restore();if(r.collapsed){message('같은 입력칸 안에서 적용할 수식을 드래그한 뒤 '+(mode==='rm'?'rm 로만':'it 이탤릭')+'을 누르세요.');return;}if(!sameSlot(r)){message('분자·분모처럼 서로 다른 입력칸에 걸친 선택은 한 번에 서체를 바꿀 수 없습니다.');return;}const node=insert(N('style',[''],{mode}));if(node){after(node);message((mode==='rm'?'로만체':'이탤릭체')+'를 선택 범위에 적용했습니다.');}}
+// 제곱·거듭제곱·아래첨자는 직전 항을 밑으로 잡습니다. π·그리스 문자도 항으로 인식합니다.
+function selectPreviousAtom(){const r=restore();if(!r.collapsed)return true;const current=owner(r.startContainer);if(!current)return false;const selectText=(node,end)=>{const before=node.data.slice(0,end);const found=before.match(/[A-Za-z0-9가-힣α-ωΑ-Ωϕϵϑςℝℤℕ∞]+(?:\.[0-9]*)?$/u);if(!found)return false;const next=document.createRange();next.setStart(node,end-found[0].length);next.setEnd(node,end);const s=getSelection();s.removeAllRanges();s.addRange(next);savedRange=next;return true;};if(r.startContainer.nodeType===3&&r.startOffset>0)return selectText(r.startContainer,r.startOffset);let container=r.startContainer,offset=r.startOffset;if(container.nodeType===3){offset=[...container.parentNode.childNodes].indexOf(container);container=container.parentNode;}while(container&&container!==current){if(offset>0)break;offset=[...container.parentNode.childNodes].indexOf(container);container=container.parentNode;}const previous=container?.childNodes?.[offset-1];if(!previous)return false;if(previous.nodeType===3)return selectText(previous,previous.data.length);if(previous.classList?.contains('widget')){const next=document.createRange();next.selectNode(previous);const s=getSelection();s.removeAllRanges();s.addRange(next);savedRange=next;return true;}return false;}
+function scriptTemplate(kind){return N(kind==='sub'?'sub':'sup',['',kind==='square'?'2':'']);}
+function applyScript(kind){const isSquare=kind==='square';if(!selectPreviousAtom()){const node=insert(scriptTemplate(kind));if(node){const base=node.querySelector('.slot');if(base)place(base);message('밑을 먼저 입력하세요. Tab으로 첨자 칸으로 이동합니다.');}return;}const node=insert(scriptTemplate(kind));if(isSquare&&node)after(node);}
 function move(dir){restore();const current=owner(savedRange.startContainer)||editor;let slots=[...editor.querySelectorAll('.slot')];if(current===editor){if(slots.length)place(dir>0?slots[0]:slots.at(-1),dir<0);return;}let i=slots.indexOf(current),target=slots[i+dir];if(target)place(target,dir<0);else{let top=current.closest('.widget');while(top?.parentElement.closest('.widget'))top=top.parentElement.closest('.widget');if(top)after(top,dir<0);}}
 function leave(){restore();let s=owner(savedRange.startContainer);let w=s?.closest('.widget');if(w)after(w);else place(editor,true);}
 function atEdge(r,s,end){const t=document.createRange();t.selectNodeContents(s);if(end)t.setStart(r.endContainer,r.endOffset);else t.setEnd(r.startContainer,r.startOffset);return !t.toString()&&!t.cloneContents().querySelector('.widget');}
@@ -84,12 +388,13 @@ function removeChar(forward=false){let r=restore();if(!sameSlot(r)){message('서
 function message(t){$('#status').textContent=t;}
 editor.addEventListener('compositionstart',()=>composing=true);editor.addEventListener('compositionend',()=>{composing=false;changed();capture();});
 editor.addEventListener('input',()=>{if(!composing){changed();capture();}});
-editor.addEventListener('keydown',e=>{if(e.isComposing||composing)return;if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();undo(e.shiftKey?1:-1);return;}if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='y'){e.preventDefault();undo(1);return;}if(e.key==='Tab'){e.preventDefault();move(e.shiftKey?-1:1);return;}if(e.key==='Enter'){e.preventDefault();move(1);return;}if(e.key==='Backspace'||e.key==='Delete'){e.preventDefault();removeChar(e.key==='Delete');return;}if(['^','_','/'].includes(e.key)&&!owner(getSelection().anchorNode)?.closest('[data-kind="text"]')){e.preventDefault();if(e.key==='^')applyScript('power');else if(e.key==='_')applyScript('sub');else insert(N('frac',['','']));return;}if(['ArrowLeft','ArrowRight'].includes(e.key)&&!e.shiftKey){capture();let r=savedRange,s=owner(r?.startContainer);if(r?.collapsed&&s&&s!==editor&&atEdge(r,s,e.key==='ArrowRight')){e.preventDefault();after(s.closest('.widget'),e.key==='ArrowLeft');}}if(['ArrowUp','ArrowDown'].includes(e.key)){e.preventDefault();move(e.key==='ArrowUp'?-1:1);}});
-editor.addEventListener('beforeinput',e=>{if(e.isComposing)return;if(e.inputType==='deleteContentBackward'||e.inputType==='deleteContentForward'){e.preventDefault();removeChar(e.inputType==='deleteContentForward');}if(e.inputType==='insertParagraph'||e.inputType==='insertLineBreak'){e.preventDefault();move(1);}if(e.inputType==='historyUndo'||e.inputType==='historyRedo'){e.preventDefault();undo(e.inputType==='historyUndo'?-1:1);}});
+editor.addEventListener('keydown',e=>{if(e.isComposing||composing)return;if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();undo(e.shiftKey?1:-1);return;}if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='y'){e.preventDefault();undo(1);return;}if(e.key==='Tab'){e.preventDefault();move(e.shiftKey?-1:1);return;}if(e.key==='Enter'){e.preventDefault();move(1);return;}if(e.key==='Backspace'||e.key==='Delete'){e.preventDefault();removeChar(e.key==='Delete');return;}if(e.key===' '&&!owner(getSelection().anchorNode)?.closest('[data-kind="text"]')){e.preventDefault();insert(N('space',[],{size:'small'}));return;}if(['^','_','/'].includes(e.key)&&!owner(getSelection().anchorNode)?.closest('[data-kind="text"]')){e.preventDefault();if(e.key==='^')applyScript('power');else if(e.key==='_')applyScript('sub');else insert(N('frac',['','']));return;}if(['ArrowLeft','ArrowRight'].includes(e.key)&&!e.shiftKey){capture();let r=savedRange,s=owner(r?.startContainer);if(r?.collapsed&&s&&s!==editor&&atEdge(r,s,e.key==='ArrowRight')){e.preventDefault();after(s.closest('.widget'),e.key==='ArrowLeft');}}if(['ArrowUp','ArrowDown'].includes(e.key)){e.preventDefault();move(e.key==='ArrowUp'?-1:1);}});
+editor.addEventListener('beforeinput',e=>{if(e.isComposing)return;if(e.inputType==='insertText'&&e.data===' '&&!owner(getSelection().anchorNode)?.closest('[data-kind="text"]')){e.preventDefault();insert(N('space',[],{size:'small'}));return;}if(e.inputType==='deleteContentBackward'||e.inputType==='deleteContentForward'){e.preventDefault();removeChar(e.inputType==='deleteContentForward');}if(e.inputType==='insertParagraph'||e.inputType==='insertLineBreak'){e.preventDefault();move(1);}if(e.inputType==='historyUndo'||e.inputType==='historyRedo'){e.preventDefault();undo(e.inputType==='historyUndo'?-1:1);}});
 editor.addEventListener('paste',e=>{e.preventDefault();capture();insert((e.clipboardData?.getData('text/plain')||'').replace(/[\r\n]+/g,' '));});editor.addEventListener('drop',e=>e.preventDefault());
-// 출력 전 빈칸과 문자/구조 오류를 확인합니다.
-let canCopy=false;
-function update(){const ast=readSlot(editor),fmt=$('input[name=format]:checked').value;const issues=[];editor.querySelectorAll('.invalid').forEach(e=>e.classList.remove('invalid'));let empties=[...editor.querySelectorAll('.slot')].filter(s=>!s.textContent.trim()&&!s.querySelector('.widget'));empties.forEach(s=>s.classList.add('invalid'));if(!ast.length)issues.push('먼저 수식을 입력하세요.');if(empties.length)issues.push(`빈 입력칸 ${empties.length}개: `+empties.slice(0,5).map(e=>e.dataset.label).join(', '));validate(ast,issues);let code=fmt==='latex'?latex(ast,issues):hwp(ast,issues);if(fmt==='latex'){const w=$('#wrapper').value;if(w==='inline')code='$'+code+'$';if(w==='display')code='\\['+code+'\\]';}$('#code').value=code;$('#wrapper').hidden=fmt!=='latex';const uniq=[...new Set(issues)];canCopy=!uniq.some(x=>!x.startsWith('안내:'));$('#issues').textContent=uniq.join(' / ')||(ast.length?'입력칸이 채워졌습니다. 코드를 복사할 수 있습니다.':'');$('#issues').className='notice'+(canCopy?' good':'');$('#copy').disabled=!canCopy;$('#outputHelp').textContent=fmt==='hwp'?'한글에서 수식 편집기를 연 뒤, 스크립트 입력 창에 붙여넣으세요.':'LaTeX: amsmath, amssymb 패키지 사용을 권장합니다. 한글 문구는 한글 조판 환경이 필요합니다.';message('');}
+// 출력 전 빈칸과 문자/구조 오류를 확인합니다. 코드 출력창을 직접 편집하는 동안에는 자동 덮어쓰지 않습니다.
+let canCopy=false,codeEditing=false,codeTimer=null;
+function discardPendingCodeEdit(){if(!codeEditing)return;codeEditing=false;clearTimeout(codeTimer);$('#code').classList.remove('editing','error');}
+function update(){const ast=readSlot(editor),fmt=$('input[name=format]:checked').value;const issues=[];editor.querySelectorAll('.invalid').forEach(e=>e.classList.remove('invalid'));let empties=[...editor.querySelectorAll('.slot')].filter(s=>!s.textContent.trim()&&!s.querySelector('.widget'));empties.forEach(s=>s.classList.add('invalid'));if(!ast.length)issues.push('먼저 수식을 입력하세요.');if(empties.length)issues.push(`빈 입력칸 ${empties.length}개: `+empties.slice(0,5).map(e=>e.dataset.label).join(', '));validate(ast,issues);let code=fmt==='latex'?latex(ast,issues):hwp(ast,issues);if(fmt==='latex'){const w=$('#wrapper').value;if(w==='inline')code='$'+code+'$';if(w==='display')code='\\['+code+'\\]';}const codeArea=$('#code');if(!codeEditing)codeArea.value=code;$('#wrapper').hidden=fmt!=='latex';const uniq=[...new Set(issues)];canCopy=!uniq.some(x=>!x.startsWith('안내:'));$('#issues').textContent=uniq.join(' / ')||(ast.length?'입력칸이 채워졌습니다. 코드를 복사할 수 있습니다.':'');$('#issues').className='notice'+(canCopy?' good':'');$('#copy').disabled=false;$('#outputHelp').textContent=fmt==='hwp'?'한글에서 수식 편집기를 연 뒤, 스크립트 입력 창에 붙여넣으세요.':'LaTeX: amsmath, amssymb 패키지 사용을 권장합니다. 한글 문구는 한글 조판 환경이 필요합니다.';message('');}
 function validate(seq,issues,context=''){
  const linear=seq.map(n=>typeof n==='string'?n:'□').join('').trim();
  const stack=[];const pairs={')':'(',']':'[','}':'{'};
@@ -97,14 +402,193 @@ function validate(seq,issues,context=''){
  if(stack.length)issues.push('닫히지 않은 괄호가 있습니다.');
  if(/[+−=×÷<>≤≥±∓∈∉∪∩∧∨⇒⇔→]$/.test(linear)&&!['지수부호','정렬'].includes(context))issues.push('연산 기호 뒤에 수식을 입력하세요.');
  for(const n of seq){if(typeof n==='string')continue;if(n.kind==='text')continue;n.parts.forEach((p,i)=>validate(p,issues,n.kind==='sup'&&i===1?'지수부호':n.kind==='matrix'&&n.style==='aligned'?'정렬':''));}}
-async function copyCode(){update();if(!canCopy){message('빈칸 또는 오류를 먼저 확인하세요.');return;}const code=$('#code').value;try{if(!navigator.clipboard?.writeText)throw new Error();await navigator.clipboard.writeText(code);message('복사했습니다.');}catch{const area=$('#code');area.focus();area.select();let ok=false;try{ok=document.execCommand('copy');}catch{}message(ok?'복사했습니다.':'코드를 선택했습니다. Ctrl+C 또는 길게 눌러 복사하세요.');}}
+async function copyCode(){update();const code=$('#code').value;try{if(!navigator.clipboard?.writeText)throw new Error();await navigator.clipboard.writeText(code);message('복사했습니다.');}catch{const area=$('#code');area.focus();area.select();let ok=false;try{ok=document.execCommand('copy');}catch{}message(ok?'복사했습니다.':'코드를 선택했습니다. Ctrl+C 또는 길게 눌러 복사하세요.');}}
+// 코드 출력창의 두 문법을 다시 AST로 읽습니다. 범용 변환기가 아니라 이 프로그램이 만드는 구조와 기본 직접 입력에 맞춘 해석기입니다.
+class FormulaSyntaxError extends Error{}
+const FORMULA_ATOM_END=/[A-Za-z0-9가-힣α-ωΑ-Ωϕϵϑςℝℤℕ∞]+(?:\.[0-9]*)?$/u;
+const FUNCTION_NAMES=new Set(['sin','cos','tan','arcsin','arccos','arctan','ln','log','sec','csc','cot','sinh','cosh','tanh','exp','max','min','det','gcd']);
+const LATEX_TO_SYMBOL={},HWP_TO_SYMBOL={};
+Object.entries(SYMBOLS).forEach(([char,def])=>{if(/^\\[A-Za-z]+$/.test(def.latex))LATEX_TO_SYMBOL[def.latex.slice(1)]=char;if(/^[A-Za-z]+$/.test(def.hwp))HWP_TO_SYMBOL[def.hwp]=char;});
+function appendFormulaNode(seq,node){if(node===null||node===undefined)return;if(Array.isArray(node)){node.forEach(item=>appendFormulaNode(seq,item));return;}if(typeof node==='string'){if(!node)return;const last=seq.at(-1);if(typeof last==='string')seq[seq.length-1]=last+node;else seq.push(node);return;}seq.push(node);}
+function takeFormulaAtom(seq){const last=seq.pop();if(last===undefined)return null;if(typeof last!=='string')return[last];const found=last.match(FORMULA_ATOM_END);if(!found){seq.push(last);return null;}const before=last.slice(0,-found[0].length);if(before)appendFormulaNode(seq,before);return[found[0]];}
+function attachFormulaScript(seq,kind,part){const base=takeFormulaAtom(seq);if(!base)throw new FormulaSyntaxError('첨자 앞의 밑이 될 항을 찾지 못했습니다.');appendFormulaNode(seq,N(kind,[base,part]));}
+function normalizeLatexCode(source){let text=source.trim();if(text.startsWith('\\[')&&text.endsWith('\\]'))return text.slice(2,-2).trim();if(text.startsWith('$$')&&text.endsWith('$$'))return text.slice(2,-2).trim();if(text.startsWith('$')&&text.endsWith('$'))return text.slice(1,-1).trim();return text;}
+
+class LatexSubsetParser{
+ constructor(source){this.s=normalizeLatexCode(source);this.i=0;}
+ fail(message){throw new FormulaSyntaxError('LaTeX '+(this.i+1)+'번째 위치: '+message);}
+ skip(){while(/\s/.test(this.s[this.i]||''))this.i++;}
+ commandName(){if(this.s[this.i]!=='\\')return null;const next=this.s[this.i+1];if(!next)return '';if(/[A-Za-z]/.test(next)){let j=this.i+1;while(/[A-Za-z]/.test(this.s[j]||''))j++;return this.s.slice(this.i+1,j);}return next;}
+ command(){const name=this.commandName();if(name===null)this.fail('명령어가 필요합니다.');this.i+=name.length+1;return name;}
+ group(){this.skip();if(this.s[this.i]!=='{')this.fail('{ 가 필요합니다.');this.i++;const seq=this.sequence(()=>this.s[this.i]==='}');if(this.s[this.i]!=='}')this.fail('닫는 } 가 없습니다.');this.i++;return seq;}
+ bracket(){this.skip();if(this.s[this.i]!=='[')this.fail('[ 가 필요합니다.');this.i++;const seq=this.sequence(()=>this.s[this.i]===']');if(this.s[this.i]!==']')this.fail('닫는 ] 가 없습니다.');this.i++;return seq;}
+ rawGroupText(){this.skip();if(this.s[this.i]!=='{')this.fail('{ 가 필요합니다.');this.i++;let depth=1,text='';while(this.i<this.s.length){const ch=this.s[this.i++];if(ch==='\\'&&this.i<this.s.length){const next=this.s[this.i];if('{}\\$%_#&^~'.includes(next)){text+=next;this.i++;continue;}text+=ch;continue;}if(ch==='{'){depth++;text+=ch;continue;}if(ch==='}'){depth--;if(!depth)return text;text+=ch;continue;}text+=ch;}this.fail('닫는 } 가 없습니다.');}
+ argument(){this.skip();if(this.s[this.i]==='{')return this.group();if(this.i>=this.s.length)this.fail('인수가 비어 있습니다.');const atom=this.atom();return atom===null?[]:[atom];}
+ scripts(){let lower=null,upper=null;for(;;){this.skip();if(this.s[this.i]!=='_'&&this.s[this.i]!=='^')break;const kind=this.s[this.i++],value=this.argument();if(kind==='_')lower=value;else upper=value;}return{lower,upper};}
+ delimiter(){this.skip();if(this.i>=this.s.length)this.fail('괄호 기호가 필요합니다.');if(this.s[this.i]==='\\'){const name=this.command();const converted={ '{':'{','}':'}','|':'|',Vert:'‖',lVert:'‖',rVert:'‖'}[name];if(!converted)this.fail('지원하지 않는 괄호 기호 \\\\'+name);return converted;}const char=this.s[this.i++];if(!'()[]{}|‖'.includes(char))this.fail('올바른 괄호 기호가 아닙니다.');return char;}
+ tryCombination(){const start=this.i;try{const empty=this.group();if(flatText(empty).trim())throw new Error();this.skip();if(this.s[this.i]!=='_')throw new Error();this.i++;const n=this.argument();this.skip();let symbol='';if(this.commandName()==='mathrm'){this.command();symbol=flatText(this.group()).trim();if(!'PCH'.includes(symbol))throw new Error();}else if(this.commandName()==='Pi'){this.command();symbol='Π';}else throw new Error();this.skip();if(this.s[this.i]!=='_')throw new Error();this.i++;const r=this.argument();return N('comb',[n,r],{symbol});}catch{this.i=start;return null;}}
+ leftFence(){const left=this.delimiter();const inner=this.sequence(()=>this.commandName()==='right');if(this.commandName()!=='right')this.fail('\\right 가 없습니다.');this.command();const right=this.delimiter();return N('fence',[inner],{left,right});}
+ matrix(){const style=this.rawGroupText().trim();if(!['matrix','pmatrix','bmatrix','vmatrix','cases','aligned'].includes(style))this.fail('지원하지 않는 행렬 환경 '+style);const rows=[];let row=[];for(;;){this.skip();if(this.commandName()==='end'){if(row.length||!rows.length)rows.push(row);this.command();const close=this.rawGroupText().trim();if(close!==style)this.fail('\\begin{'+style+'}와 \\end{'+close+'}가 맞지 않습니다.');break;}const cell=this.sequence(()=>this.s[this.i]==='&'||this.commandName()==='\\'||this.commandName()==='end');row.push(cell);this.skip();if(this.s[this.i]==='&'){this.i++;continue;}if(this.commandName()==='\\'){this.command();rows.push(row);row=[];continue;}if(this.commandName()==='end')continue;this.fail('행렬의 & , \\\\ , \\end를 확인하세요.');}const cols=rows[0]?.length||1;if(!rows.length||rows.some(r=>r.length!==cols))this.fail('행렬의 행마다 열 수가 다릅니다.');return N('matrix',rows.flat(),{rows:rows.length,cols,style});}
+ big(op){const bounds=this.scripts(),body=this.argument();let variable=[];if(op==='∫'){const start=this.i;this.skip();if(this.commandName()==='mathrm'){this.command();const mark=flatText(this.argument()).trim();if(mark==='d')variable=this.argument();else this.i=start;}else this.i=start;}return N('big',[bounds.lower||[],bounds.upper||[],body,variable],{op,bounds:!!(bounds.lower||bounds.upper)});}
+ func(name){this.skip();let base=null;if(this.s[this.i]==='_'){this.i++;base=this.argument();}const arg=this.argument();return base?N('func',[arg,base],{name,base:true}):N('func',[arg],{name});}
+ atom(){this.skip();const ch=this.s[this.i];if(ch==='\\')return this.commandAtom();if(ch==='&'||ch==='#'||ch==='}'||ch===']')this.fail('예상하지 않은 '+ch);let start=this.i;while(this.i<this.s.length&&!/\s/.test(this.s[this.i])&&!'\\{}[]^_&'.includes(this.s[this.i]))this.i++;if(start===this.i)this.fail('지원하지 않는 문자 '+(ch||''));return this.s.slice(start,this.i).replace(/-/g,'−');}
+ commandAtom(){const name=this.command();if(['int','sum','prod'].includes(name))return this.big({int:'∫',sum:'∑',prod:'∏'}[name]);if(Object.prototype.hasOwnProperty.call(LATEX_TO_SYMBOL,name))return LATEX_TO_SYMBOL[name];if([' ',',','!',';',':'].includes(name))return null;if(['{','}','%','#','$','_','^','&','|'].includes(name))return name;if(name==='frac')return N('frac',[this.argument(),this.argument()]);if(name==='sqrt'){this.skip();const index=this.s[this.i]==='['?this.bracket():null;const radicand=this.argument();return index?N('root',[radicand,index]):N('sqrt',[radicand]);}if(name==='left')return this.leftFence();if(name==='begin')return this.matrix();if(name==='binom')return N('binom',[this.argument(),this.argument()]);if(['overrightarrow','overline','widehat','dot','ddot'].includes(name)){const accent={overrightarrow:'vec',overline:'bar',widehat:'hat',dot:'dot',ddot:'ddot'}[name];return N('accent',[this.argument()],{accent});}if(name==='lim'){const bounds=this.scripts();if(!bounds.lower)this.fail('극한의 접근 조건이 없습니다.');return N('lim',[bounds.lower,this.argument()]);}if(FUNCTION_NAMES.has(name))return this.func(name);if(name==='text')return N('text',[this.rawGroupText()]);if(name==='mathrm')return flatText(this.argument());if(name==='mathbb'){const set=flatText(this.argument()).trim();return({R:'ℝ',Z:'ℤ',N:'ℕ'}[set]||set);}if(['right','end','\\'].includes(name))this.fail('예상하지 않은 \\\\'+name);this.fail('지원하지 않는 명령어 \\\\'+name);}
+ sequence(stop=()=>false){const seq=[];for(;;){this.skip();if(this.i>=this.s.length||stop())break;const ch=this.s[this.i];if(ch==='}'||ch===']'){if(stop())break;this.fail('예상하지 않은 '+ch);}if(ch==='^'||ch==='_'){this.i++;attachFormulaScript(seq,ch==='^'?'sup':'sub',this.argument());continue;}if(ch==='{'){const combination=this.tryCombination();if(combination){appendFormulaNode(seq,combination);continue;}appendFormulaNode(seq,this.group());continue;}appendFormulaNode(seq,this.atom());}return seq;}
+ parse(){const result=this.sequence();this.skip();if(this.i<this.s.length)this.fail('끝까지 해석하지 못했습니다.');return result;}
+}
+
+class HwpSubsetParser{
+ constructor(source){this.s=source.trim();this.i=0;}
+ fail(message){throw new FormulaSyntaxError('한글 수식 '+(this.i+1)+'번째 위치: '+message);}
+ skip(){while(/\s/.test(this.s[this.i]||''))this.i++;}
+ atWord(word){return this.s.slice(this.i,this.i+word.length)===word&&!/[A-Za-z]/.test(this.s[this.i-1]||'')&&!/[A-Za-z]/.test(this.s[this.i+word.length]||'');}
+ word(){this.skip();const match=this.s.slice(this.i).match(/^[A-Za-z]+/);if(!match)this.fail('명령어가 필요합니다.');this.i+=match[0].length;return match[0];}
+ quote(){this.skip();if(this.s[this.i]!=='"')this.fail('따옴표가 필요합니다.');this.i++;let text='';while(this.i<this.s.length&&this.s[this.i]!=='"')text+=this.s[this.i++];if(this.s[this.i]!=='"')this.fail('닫는 따옴표가 없습니다.');this.i++;return text;}
+ group(){this.skip();if(this.s[this.i]!=='{')this.fail('{ 가 필요합니다.');this.i++;const left=this.sequence(()=>this.atWord('OVER')||this.s[this.i]==='}');this.skip();if(this.atWord('OVER')){this.i+=4;const right=this.sequence(()=>this.s[this.i]==='}');if(this.s[this.i]!=='}')this.fail('닫는 } 가 없습니다.');this.i++;return[N('frac',[left,right])];}if(this.s[this.i]!=='}')this.fail('닫는 } 가 없습니다.');this.i++;return left;}
+ argument(){this.skip();if(this.s[this.i]==='{')return this.group();if(this.s[this.i]==='"')return[N('text',[this.quote()])];if(this.i>=this.s.length)this.fail('인수가 비어 있습니다.');return[this.atom()];}
+ scripts(){let lower=null,upper=null;for(;;){this.skip();if(this.s[this.i]!=='_'&&this.s[this.i]!=='^')break;const kind=this.s[this.i++],value=this.argument();if(kind==='_')lower=value;else upper=value;}return{lower,upper};}
+ rawRmGroup(){this.skip();if(this.s[this.i]!=='{')this.fail('{rm …}이 필요합니다.');this.i++;this.skip();if(this.word()!=='rm')this.fail('rm 명령어가 필요합니다.');this.skip();const name=this.word();this.skip();if(this.s[this.i]!=='}')this.fail('닫는 } 가 없습니다.');this.i++;return name;}
+ tryCombination(){const start=this.i;try{const empty=this.group();if(flatText(empty).trim())throw new Error();this.skip();if(this.s[this.i]!=='_')throw new Error();this.i++;const n=this.argument();this.skip();let symbol='';if(this.s[this.i]==='{'){symbol=this.rawRmGroup();if(!'PCH'.includes(symbol))throw new Error();}else{symbol=this.word();if(symbol!=='Pi')throw new Error();symbol='Π';}this.skip();if(this.s[this.i]!=='_')throw new Error();this.i++;const r=this.argument();return N('comb',[n,r],{symbol});}catch{this.i=start;return null;}}
+ tryRmFunction(){const start=this.i;try{const name=this.rawRmGroup();if(!FUNCTION_NAMES.has(name))throw new Error();this.skip();let base=null;if(this.s[this.i]==='_'){this.i++;base=this.argument();}const arg=this.argument();return base?N('func',[arg,base],{name,base:true}):N('func',[arg],{name});}catch{this.i=start;return null;}}
+ delimiter(){this.skip();if(this.i>=this.s.length)this.fail('괄호 기호가 필요합니다.');return this.s[this.i++];}
+ leftFence(){const left=this.delimiter(),inner=this.sequence(()=>this.atWord('RIGHT'));if(!this.atWord('RIGHT'))this.fail('RIGHT 가 없습니다.');this.i+=5;const right=this.delimiter();return N('fence',[inner],{left,right});}
+ big(op){const bounds=this.scripts(),body=this.argument();let variable=[];if(op==='∫'){const start=this.i;try{if(this.rawRmGroup()!=='d')throw new Error();variable=this.argument();}catch{this.i=start;}}return N('big',[bounds.lower||[],bounds.upper||[],body,variable],{op,bounds:!!(bounds.lower||bounds.upper)});}
+ matrix(style){this.skip();if(this.s[this.i]!=='{')this.fail('행렬의 { 가 필요합니다.');this.i++;const rows=[];let row=[];for(;;){const cell=this.sequence(()=>['&','#','}'].includes(this.s[this.i]));row.push(cell);this.skip();if(this.s[this.i]==='&'){this.i++;continue;}if(this.s[this.i]==='#'){this.i++;rows.push(row);row=[];continue;}if(this.s[this.i]==='}'){this.i++;rows.push(row);break;}this.fail('행렬의 & , # , } 를 확인하세요.');}const cols=rows[0]?.length||1;if(rows.some(r=>r.length!==cols))this.fail('행렬의 행마다 열 수가 다릅니다.');return N('matrix',rows.flat(),{rows:rows.length,cols,style});}
+ atom(){this.skip();const ch=this.s[this.i];if(ch==='"')return N('text',[this.quote()]);if(/[A-Za-z]/.test(ch||'')){const name=this.word();if(name==='LEFT')return this.leftFence();if(name==='SQRT'){const first=this.argument();this.skip();if(this.atWord('OF')){this.i+=2;return N('root',[this.argument(),first]);}return N('sqrt',[first]);}if(['INT','SUM','PROD'].includes(name))return this.big({INT:'∫',SUM:'∑',PROD:'∏'}[name]);if(name==='lim'){const bounds=this.scripts();if(!bounds.lower)this.fail('극한의 접근 조건이 없습니다.');return N('lim',[bounds.lower,this.argument()]);}if(name==='BINOM')return N('binom',[this.argument(),this.argument()]);if(['VEC','BAR','HAT','DOT','DDOT'].includes(name))return N('accent',[this.argument()],{accent:{VEC:'vec',BAR:'bar',HAT:'hat',DOT:'dot',DDOT:'ddot'}[name]});if(['MATRIX','PMATRIX','BMATRIX','DMATRIX','CASES','EQALIGN'].includes(name))return this.matrix({MATRIX:'matrix',PMATRIX:'pmatrix',BMATRIX:'bmatrix',DMATRIX:'vmatrix',CASES:'cases',EQALIGN:'aligned'}[name]);if(Object.prototype.hasOwnProperty.call(HWP_TO_SYMBOL,name))return HWP_TO_SYMBOL[name];return name;}if(/[0-9.]/.test(ch||'')){const match=this.s.slice(this.i).match(/^[0-9]+(?:\.[0-9]*)?/);this.i+=match[0].length;return match[0];}if(!ch)this.fail('수식이 끝났습니다.');this.i++;return ch==='-'?'−':ch;}
+ sequence(stop=()=>false){const seq=[];for(;;){this.skip();if(this.i>=this.s.length||stop())break;const ch=this.s[this.i];if(ch==='}'){if(stop())break;this.fail('예상하지 않은 }');}if(ch==='^'||ch==='_'){this.i++;attachFormulaScript(seq,ch==='^'?'sup':'sub',this.argument());continue;}if(ch==='{'){const combination=this.tryCombination();if(combination){appendFormulaNode(seq,combination);continue;}const func=this.tryRmFunction();if(func){appendFormulaNode(seq,func);continue;}appendFormulaNode(seq,this.group());continue;}appendFormulaNode(seq,this.atom());}return seq;}
+ parse(){const result=this.sequence();this.skip();if(this.i<this.s.length)this.fail('끝까지 해석하지 못했습니다.');return result;}
+}
+// 빈칸·좁게 붙이기·명시 서체는 기존 구조 파서가 잃지 않도록 별도 노드로 읽습니다.
+LatexSubsetParser.prototype.commandAtom=function(){
+ const name=this.command();
+ if(['int','sum','prod'].includes(name))return this.big({int:'∫',sum:'∑',prod:'∏'}[name]);
+ if(Object.prototype.hasOwnProperty.call(LATEX_TO_SYMBOL,name))return LATEX_TO_SYMBOL[name];
+ if(name===',')return N('space',[],{size:'small'});
+ if(name===':')return N('space',[],{size:'medium'});
+ if(name===';'||name==='quad')return N('space',[],{size:'large'});
+ if(name==='!')return N('space',[],{size:'tight'});
+ if(name===' ')return null;
+ if(['{','}','%','#','$','_','^','&','|'].includes(name))return name;
+ if(name==='frac')return N('frac',[this.argument(),this.argument()]);
+ if(name==='sqrt'){this.skip();const index=this.s[this.i]==='['?this.bracket():null;const radicand=this.argument();return index?N('root',[radicand,index]):N('sqrt',[radicand]);}
+ if(name==='left')return this.leftFence();
+ if(name==='begin')return this.matrix();
+ if(name==='binom')return N('binom',[this.argument(),this.argument()]);
+ if(['overrightarrow','overline','widehat','dot','ddot'].includes(name)){const accent={overrightarrow:'vec',overline:'bar',widehat:'hat',dot:'dot',ddot:'ddot'}[name];return N('accent',[this.argument()],{accent});}
+ if(name==='lim'){const bounds=this.scripts();if(!bounds.lower)this.fail('극한의 접근 조건이 없습니다.');return N('lim',[bounds.lower,this.argument()]);}
+ if(FUNCTION_NAMES.has(name))return this.func(name);
+ if(name==='text')return N('text',[this.rawGroupText()]);
+ if(name==='mathit'||name==='mathrm')return N('style',[this.argument()],{mode:name==='mathrm'?'rm':'it'});
+ if(name==='mathbb'){const set=flatText(this.argument()).trim();return({R:'ℝ',Z:'ℤ',N:'ℕ'}[set]||set);}
+ if(['right','end','\\'].includes(name))this.fail('예상하지 않은 \\\\'+name);
+ this.fail('지원하지 않는 명령어 \\'+name);
+};
+// 직렬화기가 밑을 안전하게 묶어 만든 {여러 항}_첨자도 하나의 밑으로 복원합니다.
+LatexSubsetParser.prototype.sequence=function(stop=()=>false){
+ const seq=[];
+ for(;;){
+  this.skip();
+  if(this.i>=this.s.length||stop())break;
+  const ch=this.s[this.i];
+  if(ch==='}'||ch===']'){if(stop())break;this.fail('예상하지 않은 '+ch);}
+  if(ch==='^'||ch==='_'){this.i++;attachFormulaScript(seq,ch==='^'?'sup':'sub',this.argument());continue;}
+  if(ch==='{'){
+   const combination=this.tryCombination();
+   if(combination){appendFormulaNode(seq,combination);continue;}
+   const group=this.group();
+   this.skip();
+   if(this.s[this.i]==='^'||this.s[this.i]==='_'){
+    const marker=this.s[this.i++];
+    appendFormulaNode(seq,N(marker==='^'?'sup':'sub',[group,this.argument()]));
+    continue;
+   }
+   appendFormulaNode(seq,group);
+   continue;
+  }
+  appendFormulaNode(seq,this.atom());
+ }
+ return seq;
+};
+// 적분 출력의 \\,\mathrm{d}x는 적분 구조 안의 미분소로 다시 묶습니다.
+LatexSubsetParser.prototype.big=function(op){
+ const bounds=this.scripts(),body=this.argument();
+ let variable=[];
+ if(op==='∫'){
+  const start=this.i;
+  this.skip();
+  if(this.s.startsWith('\\,',this.i))this.i+=2;
+  this.skip();
+  if(this.commandName()==='mathrm'){
+   this.command();
+   const mark=flatText(this.argument()).trim();
+   if(mark==='d')variable=this.argument();else this.i=start;
+  }else this.i=start;
+ }
+ return N('big',[bounds.lower||[],bounds.upper||[],body,variable],{op,bounds:!!(bounds.lower||bounds.upper)});
+};
+HwpSubsetParser.prototype.tryStyleGroup=function(){
+ const start=this.i;
+ try{
+  this.skip();
+  if(this.s[this.i]!=='{')throw new Error();
+  this.i++;
+  this.skip();
+  const mode=this.word().toLowerCase();
+  if(!['rm','it'].includes(mode))throw new Error();
+  const inner=this.sequence(()=>this.s[this.i]==='}');
+  this.skip();
+  if(this.s[this.i]!=='}')throw new Error();
+  this.i++;
+  return N('style',[inner],{mode});
+ }catch{this.i=start;return null;}
+};
+const hwpAtomBase=HwpSubsetParser.prototype.atom;
+HwpSubsetParser.prototype.atom=function(){
+ this.skip();
+ if(this.s[this.i]==="'"){this.i++;return N('space',[],{size:'small'});}
+ if(this.s[this.i]==='~'){this.i++;if(this.s[this.i]==='~'){this.i++;return N('space',[],{size:'large'});}return N('space',[],{size:'medium'});}
+ return hwpAtomBase.call(this);
+};
+HwpSubsetParser.prototype.sequence=function(stop=()=>false){
+ const seq=[];
+ for(;;){
+  this.skip();
+  if(this.i>=this.s.length||stop())break;
+  const ch=this.s[this.i];
+  if(ch==='}'){if(stop())break;this.fail('예상하지 않은 }');}
+  if(ch==='^'||ch==='_'){this.i++;attachFormulaScript(seq,ch==='^'?'sup':'sub',this.argument());continue;}
+  if(ch==='{'){
+   const combination=this.tryCombination();
+   if(combination){appendFormulaNode(seq,combination);continue;}
+   const func=this.tryRmFunction();
+   if(func){appendFormulaNode(seq,func);continue;}
+   const styled=this.tryStyleGroup();
+   if(styled){appendFormulaNode(seq,styled);continue;}
+   const group=this.group();
+   this.skip();
+   if(this.s[this.i]==='^'||this.s[this.i]==='_'){
+    const marker=this.s[this.i++];
+    appendFormulaNode(seq,N(marker==='^'?'sup':'sub',[group,this.argument()]));
+    continue;
+   }
+   appendFormulaNode(seq,group);
+   continue;
+  }
+  appendFormulaNode(seq,this.atom());
+ }
+ return seq;
+};
+function parseFormulaCode(source,format){if(!source.trim())return[];return format==='latex'?new LatexSubsetParser(source).parse():new HwpSubsetParser(source).parse();}
+function showCodeParseError(error){const reason=error instanceof FormulaSyntaxError?error.message:'코드를 해석하지 못했습니다.';$('#code').classList.remove('editing');$('#code').classList.add('error');$('#issues').textContent='코드 반영 실패: '+reason;$('#issues').className='notice';message('수식 입력창은 마지막으로 정상 반영된 상태를 유지합니다.');}
+function applyCodeEdit(){clearTimeout(codeTimer);const area=$('#code'),selectionStart=area.selectionStart,selectionEnd=area.selectionEnd;try{const ast=parseFormulaCode(area.value,$('input[name=format]:checked').value);codeEditing=false;area.classList.remove('editing','error');setAST(ast,true,false);area.focus({preventScroll:true});const end=Math.min(selectionEnd,area.value.length),start=Math.min(selectionStart,end);area.setSelectionRange(start,end);message('코드 변경을 수식 입력창에 반영했습니다.');}catch(error){codeEditing=true;showCodeParseError(error);}}
+function queueCodeApply(){codeEditing=true;$('#code').classList.remove('error');$('#code').classList.add('editing');clearTimeout(codeTimer);codeTimer=setTimeout(applyCodeEdit,650);}
 // 탭별 버튼 정의. 표시용 HTML은 아래 고정 문자열에만 허용합니다.
 const buttons={};function add(tab,label,name,make){(buttons[tab]??=[]).push({label,name,make});}function literal(tab,value,name=value,label=value){add(tab,label,name,()=>value);}function template(tab,label,name,kind,parts,meta={}){add(tab,label,name,()=>N(kind,parts,meta));}
-const B='기본',F='함수',D='미적분·수열',C='순열·조합',M='행렬·여러 줄',L='집합·명제',G='기하·벡터',A='문자·기호';
+const B='기본',F='함수',D='미적분·수열',C='순열·조합',M='행렬·여러 줄',L='집합·명제',A='문자',K='기호',G='기하·벡터';
 ['x','y','z','π','7','8','9','×','÷','±'].forEach(v=>literal(B,v,SYMBOLS[v]?.name||v));
 template(B,'<span class="tinyfrac"><span>□</span><span>□</span></span>','분수','frac',['','']);add(B,'□²','제곱',()=>({script:'square'}));add(B,'□<sup>□</sup>','거듭제곱',()=>({script:'power'}));add(B,'□<sub>□</sub>','아래첨자',()=>({script:'sub'}));['4','5','6','+','−','='].forEach(v=>literal(B,v,SYMBOLS[v]?.name||v));
 template(B,'√□','제곱근','sqrt',['']);template(B,'ⁿ√□','n제곱근','root',['','']);template(B,'1/□','역수','frac',['1','']);literal(B,'∞','무한대');['1','2','3','<','>','≠'].forEach(v=>literal(B,v,SYMBOLS[v]?.name||v,v==='<'?'&lt;':v));
-[['(',')','소괄호'],['[',']','대괄호'],['{','}','중괄호'],['|','|','절댓값']].forEach(([left,right,name])=>template(B,left+'□'+right,name,'fence',[''],{left,right}));['0','.','e','i','≤','≥'].forEach(v=>literal(B,v,SYMBOLS[v]?.name||v));literal(B,',','쉼표');literal(B,'!','팩토리얼');literal(B,'%','퍼센트');literal(B,'°','도');
+[['(',')','소괄호'],['[',']','대괄호'],['{','}','중괄호'],['|','|','절댓값']].forEach(([left,right,name])=>template(B,left+'□'+right,name,'fence',[''],{left,right}));['0','.','e','i','≤','≥'].forEach(v=>literal(B,v,SYMBOLS[v]?.name||v));literal(B,',','쉼표');literal(B,'!','팩토리얼');literal(B,'%','퍼센트');literal(B,'°','도');add(B,'<span class="blank-key small"></span>','작은 빈칸 (¼칸)',()=>N('space',[],{size:'small'}));add(B,'<span class="blank-key medium"></span>','중간 빈칸 (1칸)',()=>N('space',[],{size:'medium'}));add(B,'<span class="blank-key large"></span>','큰 빈칸 (2칸)',()=>N('space',[],{size:'large'}));add(B,'<span class="blank-key tight">↔</span>','좁게 붙이기 (LaTeX 음수 간격)',()=>N('space',[],{size:'tight'}));
 ['sin','cos','tan','arcsin','arccos','arctan','ln'].forEach(name=>template(F,name,'함수 '+name,'func',[''],{name}));template(F,'log₁₀','상용로그','func',['','10'],{name:'log',base:true});template(F,'log<sub>□</sub>','밑을 지정한 로그','func',['',''],{name:'log',base:true});template(F,'e<sup>□</sup>','지수함수','sup',['e','']);template(F,'10<sup>□</sup>','10의 거듭제곱','sup',['10','']);add(F,'f(□)','함수 표기',()=>N('fence',[''],{left:'(',right:')',prefix:'f'}));literal(F,'∘','합성함수');template(F,'f⁻¹','역함수','sup',['f','−1']);['sec','csc','cot','sinh','cosh','tanh','exp','max','min','det','gcd'].forEach(name=>template(F,name,name,'func',[''],{name}));
 template(D,'lim','극한','lim',['x→','']);template(D,'lim⁻','좌극한','lim',[[ 'x→',N('sup',['','−']) ],'']);template(D,'lim⁺','우극한','lim',[[ 'x→',N('sup',['','+']) ],'']);
 template(D,'d/dx','미분','frac',[[ 'd',N('fence',[''],{left:'(',right:')'}) ],'dx']);template(D,'f′(x)','도함수','fence',['x'],{left:'(',right:')',prefix:'f′'});template(D,'d²/dx²','이계도함수','frac',[[N('sup',['d','2']),N('fence',[''],{left:'(',right:')'})],['d',N('sup',['x','2'])]]);template(D,'∂/∂x','편미분','frac',[['∂',N('fence',[''],{left:'(',right:')'})],'∂x']);template(D,'f′(a)','미분계수','fence',['a'],{left:'(',right:')',prefix:'f′'});
@@ -112,14 +596,34 @@ template(D,'∫','부정적분','big',['','','','x'],{op:'∫',bounds:false});te
 literal(C,'!','팩토리얼');['P','C','Π','H'].forEach((symbol,i)=>template(C,'<sub>n</sub>'+symbol+'<sub>r</sub>',['순열','조합','중복순열','중복조합'][i],'comb',['',''],{symbol}));template(C,'(ⁿᵣ)','이항계수','binom',['','']);
 ['matrix','pmatrix','bmatrix','vmatrix','cases','aligned'].forEach((style,i)=>add(M,['▦','(▦)','[▦]','|▦|','{ …','≡'][i],['괄호 없는 행렬','소괄호 행렬','대괄호 행렬','행렬식','경우 나누기','등호 정렬'][i],()=>({dialog:style})));add(M,'{ =','연립방정식',()=>({dialog:'cases',cols:1}));
 ['∈','∉','∋','⊂','⊆','⊃','⊇','∪','∩','∖','∅','∧','∨','¬','⇒','⇔','∀','∃','∴','∵'].forEach(v=>literal(L,v,SYMBOLS[v]?.name||v));template(L,'A<sup>c</sup>','여집합','sup',['','c']);template(L,'{x | …}','조건제시법','fence',[['x | ']],{left:'{',right:'}'});['ℝ','ℤ','ℕ'].forEach(v=>literal(L,v,'수 집합 '+v));
+['→','←','↔','↦','↑','↓','⇒','⇔','⋯','…','⋮','⋱','≈','≡','∂','∞','∠','△','⊥','∥','∈','∉','⊂','⊆','∪','∩','∅','¬','∧','∨','∀','∃'].forEach(v=>literal(K,v,SYMBOLS[v]?.name||v));
 ['∠','△','∥','⊥','·','°'].forEach(v=>literal(G,v,SYMBOLS[v]?.name||v));[['bar','A̅B̅','선분·윗줄'],['vec','AB⃗','벡터'],['hat','x̂','모자'],['dot','ẋ','윗점'],['ddot','ẍ','윗점 두 개']].forEach(([accent,label,name])=>template(G,label,name,'accent',[''],{accent}));template(G,'‖v‖','벡터의 크기','fence',[''],{left:'‖',right:'‖'});template(G,'(x,y)','좌표','fence',['x,y'],{left:'(',right:')'});
-add(A,'가나다','설명 텍스트',()=>N('text',['']));[...'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',...greekSmall,...greekBig,'ϕ','ϵ','ϑ','ς','→','←','↔','↦','↑','↓','⇒','⇔','⋯','…','⋮','⋱','≈','≡'].forEach(v=>literal(A,v,SYMBOLS[v]?.name||v));
+// 문자 탭의 독립 키보드 상태입니다. Shift는 모든 문자판에서 항상 쓸 수 있습니다.
+const characterState={mode:'latin',upper:false};
+const hangulLeads=['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+const hangulVowels=['ㅏ','ㅐ','ㅑ','ㅒ','ㅓ','ㅔ','ㅕ','ㅖ','ㅗ','ㅘ','ㅙ','ㅚ','ㅛ','ㅜ','ㅝ','ㅞ','ㅟ','ㅠ','ㅡ','ㅢ','ㅣ'];
+const hangulBaseKeys=['ㄱ','ㄴ','ㄷ','ㄹ','ㅁ','ㅂ','ㅅ','ㅇ','ㅈ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ','ㅏ','ㅐ','ㅑ','ㅓ','ㅔ','ㅕ','ㅗ','ㅛ','ㅜ','ㅠ','ㅡ','ㅣ'];
+const hangulShiftKeys=['ㄲ','ㄴ','ㄸ','ㄹ','ㅁ','ㅃ','ㅆ','ㅇ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ','ㅏ','ㅒ','ㅑ','ㅓ','ㅖ','ㅕ','ㅗ','ㅛ','ㅜ','ㅠ','ㅡ','ㅣ'];
+const hangulTails=['','ㄱ','ㄲ','ㄳ','ㄴ','ㄵ','ㄶ','ㄷ','ㄹ','ㄺ','ㄻ','ㄼ','ㄽ','ㄾ','ㄿ','ㅀ','ㅁ','ㅂ','ㅄ','ㅅ','ㅆ','ㅇ','ㅈ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ'];
+const hangulDoubleLead={'ㄱㄱ':'ㄲ','ㄷㄷ':'ㄸ','ㅂㅂ':'ㅃ','ㅅㅅ':'ㅆ','ㅈㅈ':'ㅉ'};
+const hangulVowelJoin={'ㅗㅏ':'ㅘ','ㅗㅐ':'ㅙ','ㅗㅣ':'ㅚ','ㅜㅓ':'ㅝ','ㅜㅔ':'ㅞ','ㅜㅣ':'ㅟ','ㅡㅣ':'ㅢ'};
+const hangulTailJoin={'ㄱㅅ':'ㄳ','ㄴㅈ':'ㄵ','ㄴㅎ':'ㄶ','ㄹㄱ':'ㄺ','ㄹㅁ':'ㄻ','ㄹㅂ':'ㄼ','ㄹㅅ':'ㄽ','ㄹㅌ':'ㄾ','ㄹㅍ':'ㄿ','ㄹㅎ':'ㅀ','ㅂㅅ':'ㅄ'};
+const hangulTailSplit={'ㄳ':['ㄱ','ㅅ'],'ㄵ':['ㄴ','ㅈ'],'ㄶ':['ㄴ','ㅎ'],'ㄺ':['ㄹ','ㄱ'],'ㄻ':['ㄹ','ㅁ'],'ㄼ':['ㄹ','ㅂ'],'ㄽ':['ㄹ','ㅅ'],'ㄾ':['ㄹ','ㅌ'],'ㄿ':['ㄹ','ㅍ'],'ㅀ':['ㄹ','ㅎ'],'ㅄ':['ㅂ','ㅅ']};
+function syllable(lead,vowel,tail=0){return String.fromCharCode(0xac00+(lead*21+vowel)*28+tail);}
+function splitSyllable(char){const n=char.codePointAt(0)-0xac00;if(n<0||n>=11172)return null;return{lead:Math.floor(n/588),vowel:Math.floor(n%588/28),tail:n%28};}
+function setHangulCaret(node,offset){const r=document.createRange();r.setStart(node,offset);r.collapse(true);const s=getSelection();s.removeAllRanges();s.addRange(r);savedRange=r;changed();capture();}
+// 화면 한글 글자판은 두벌식 자모를 실제 음절로 조합합니다.
+function insertHangul(jamo){const r=restore();if(!sameSlot(r)){message('하나의 입력칸 안에서 입력하세요.');return;}if(!r.collapsed||r.startContainer.nodeType!==3){insert(jamo);return;}const node=r.startContainer,pos=r.startOffset,previous=node.data[pos-1];if(!previous){insert(jamo);return;}const composed=splitSyllable(previous),isVowel=hangulVowels.includes(jamo),leadIndex=hangulLeads.indexOf(jamo),tailIndex=hangulTails.indexOf(jamo),vowelIndex=hangulVowels.indexOf(jamo);const replace=(text)=>{node.replaceData(pos-1,1,text);setHangulCaret(node,pos-1+text.length);};const append=(text)=>{node.insertData(pos,text);setHangulCaret(node,pos+text.length);};if(isVowel){if(hangulLeads.includes(previous)){replace(syllable(hangulLeads.indexOf(previous),vowelIndex));return;}if(composed){if(composed.tail===0){const joined=hangulVowelJoin[hangulVowels[composed.vowel]+jamo];if(joined){replace(syllable(composed.lead,hangulVowels.indexOf(joined)));return;}append(syllable(11,vowelIndex));return;}const tail=hangulTails[composed.tail],split=hangulTailSplit[tail];const kept=split?hangulTails.indexOf(split[0]):0;const nextLead=hangulLeads.indexOf(split?split[1]:tail);replace(syllable(composed.lead,composed.vowel,kept)+syllable(nextLead<0?11:nextLead,vowelIndex));return;}append(syllable(11,vowelIndex));return;}if(leadIndex>=0){if(hangulLeads.includes(previous)){const doubled=hangulDoubleLead[previous+jamo];if(doubled){replace(doubled);return;}}if(composed){if(composed.tail===0&&tailIndex>0){replace(syllable(composed.lead,composed.vowel,tailIndex));return;}if(composed.tail>0){const joined=hangulTailJoin[hangulTails[composed.tail]+jamo];if(joined){replace(syllable(composed.lead,composed.vowel,hangulTails.indexOf(joined)));return;}}}append(jamo);return;}insert(jamo);}
+function appendCharacterKey(value,name=value,korean=false){const b=el('button','key');b.title=name;b.setAttribute('aria-label',name);b.append(el('span','symbol',value),el('span','keyname',name));b.addEventListener('click',()=>korean?insertHangul(value):insert(value));$('#keys').append(b);}
+function characterControl(label,active,action,disabled=false,title=''){const b=el('button',active?'selected':'',label);b.type='button';b.disabled=disabled;b.title=title;b.onclick=action;$('.character-controls').append(b);}
+function showCharacterKeyboard(){const keys=$('#keys');keys.replaceChildren();const controls=el('div','character-controls');keys.append(controls);const refresh=()=>showCharacterKeyboard();characterControl('abc',characterState.mode==='latin',()=>{characterState.mode='latin';refresh();},false,'영문 문자판');characterControl('αβγ',characterState.mode==='greek',()=>{characterState.mode='greek';refresh();},false,'그리스 문자판');characterControl('가나다',characterState.mode==='hangul',()=>{characterState.mode='hangul';refresh();},false,'한글 문자판');characterControl('⇧',characterState.upper,()=>{characterState.upper=!characterState.upper;refresh();},false,'Shift: 영문·그리스 대문자 / 한글 쌍자음·ㅒ·ㅖ');characterControl('텍스트',false,()=>insert(N('text',[''])));let values=[];if(characterState.mode==='latin'){values=Array.from(characterState.upper?'ABCDEFGHIJKLMNOPQRSTUVWXYZ':'abcdefghijklmnopqrstuvwxyz');}else if(characterState.mode==='greek'){values=characterState.upper?greekBig:greekSmall;}else{values=characterState.upper?hangulShiftKeys:hangulBaseKeys;}values.forEach(value=>appendCharacterKey(value,SYMBOLS[value]?.name||value,characterState.mode==='hangul'));}
 // 함수·도함수의 괄호 앞 이름을 구조적으로 보존합니다.
 const renderBase=render;render=function(n){const w=renderBase(n);if(n.prefix)w.prepend(el('span','fn',n.prefix));return w;};
 const latexBase=latex;latex=function(seq,issues=[]){return seq.map(n=>typeof n!=='string'&&n.prefix?chars(n.prefix,'latex',issues)+latexBase([{...n,prefix:undefined}],issues):latexBase([n],issues)).join('');};
-const hwpBase=hwp;hwp=function(seq,issues=[]){return seq.map(n=>typeof n!=='string'&&n.prefix?chars(n.prefix,'hwp',issues)+hwpBase([{...n,prefix:undefined}],issues):hwpBase([n],issues)).join(' ');};
-function showTab(tab){$('#keys').replaceChildren();$('#tabs').querySelectorAll('button').forEach(b=>{b.classList.toggle('selected',b.textContent===tab);b.setAttribute('aria-pressed',b.textContent===tab);});buttons[tab].forEach(def=>{const b=el('button','key');b.title=def.name;b.setAttribute('aria-label',def.name);const symbol=el('span','symbol');symbol.innerHTML=def.label;const name=el('span','keyname',def.name);b.append(symbol,name);b.addEventListener('click',()=>{const v=def.make();if(v.dialog)openMatrix(v.dialog,v.cols);else if(v.script)applyScript(v.script);else insert(v);});$('#keys').append(b);});}
-Object.keys(buttons).forEach(tab=>{const b=el('button','tab',tab);b.onclick=()=>showTab(tab);$('#tabs').append(b);});
+const hwpBase=hwp;hwp=function(seq,issues=[]){return seq.map(n=>typeof n!=='string'&&n.prefix?chars(n.prefix,'hwp',issues)+' '+hwpBase([{...n,prefix:undefined}],issues):hwpBase([n],issues)).join('');};
+function showTab(tab){$('#keys').replaceChildren();$('#tabs').querySelectorAll('button').forEach(b=>{b.classList.toggle('selected',b.textContent===tab);b.setAttribute('aria-pressed',b.textContent===tab);});if(tab===A){showCharacterKeyboard();return;}(buttons[tab]||[]).forEach(def=>{const b=el('button','key');b.title=def.name;b.setAttribute('aria-label',def.name);const symbol=el('span','symbol');symbol.innerHTML=def.label;const name=el('span','keyname',def.name);b.append(symbol,name);b.addEventListener('click',()=>{const v=def.make();if(v.dialog)openMatrix(v.dialog,v.cols);else if(v.script)applyScript(v.script);else insert(v);});$('#keys').append(b);});}
+// 문자·기호 탭은 고정 전환형 키보드이므로 일반 버튼 목록에 없어도 탭을 항상 표시합니다.
+[B,F,D,C,M,L,G,K,A].forEach(tab=>{const b=el('button','tab',tab);b.onclick=()=>showTab(tab);$('#tabs').append(b);});
 // 터치·마우스 버튼 클릭으로 편집 선택이 사라지지 않게 합니다.
 document.addEventListener('pointerdown',e=>{const b=e.target.closest('button');if(b&&!b.closest('dialog')){capture();e.preventDefault();}});
 let matrixStyle='pmatrix';
@@ -147,6 +651,13 @@ const examples={
 '연립방정식':[N('matrix',['2x+y=4','3x−4y=−1'],{rows:2,cols:1,style:'cases'})]
 };
 Object.keys(examples).forEach(name=>{const o=el('option',null,name);o.value=name;$('#examples').append(o);});$('#examples').onchange=e=>{if(e.target.value)setAST(clone(examples[e.target.value]));e.target.value='';};
-$('#undo').onclick=()=>undo(-1);$('#redo').onclick=()=>undo(1);$('#clear').onclick=()=>{if(!editor.textContent&&!editor.querySelector('.widget')||confirm('작성한 수식을 모두 지울까요? 실행 취소로 되돌릴 수 있습니다.'))setAST([]);};$('#prev').onclick=()=>move(-1);$('#next').onclick=()=>move(1);$('#exit').onclick=leave;$('#erase').onclick=()=>removeChar();$('#copy').onclick=copyCode;document.querySelectorAll('input[name=format]').forEach(e=>e.onchange=update);$('#wrapper').onchange=update;
-showTab(B);snapshot();update();
-</script></body></html>
+$('#undo').onclick=()=>undo(-1);$('#redo').onclick=()=>undo(1);$('#clear').onclick=()=>setAST([]);$('#styleIt').onclick=()=>applyTextStyle('it');$('#styleRm').onclick=()=>applyTextStyle('rm');$('#prev').onclick=()=>move(-1);$('#next').onclick=()=>move(1);$('#exit').onclick=leave;$('#erase').onclick=()=>removeChar();$('#copy').onclick=copyCode;
+const codeArea=$('#code');
+codeArea.addEventListener('input',queueCodeApply);
+codeArea.addEventListener('blur',()=>{if(codeEditing)applyCodeEdit();});
+codeArea.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key==='Enter'){event.preventDefault();applyCodeEdit();}if(event.key==='Escape'){event.preventDefault();discardPendingCodeEdit();update();message('코드 편집을 취소하고 현재 수식 코드로 되돌렸습니다.');}});
+document.querySelectorAll('input[name=format]').forEach(e=>e.onchange=()=>{discardPendingCodeEdit();update();});$('#wrapper').onchange=()=>{discardPendingCodeEdit();update();};
+showVersion();showTab(B);snapshot();update();
+</script>
+</body>
+</html>
